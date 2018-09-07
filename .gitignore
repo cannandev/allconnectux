@@ -16,7 +16,7 @@ sites.php
 gulp/helpers/developer.js
 node_modules
 
-
-
+# Ignore bitbucket git 
+_bb.git
 
 
