@@ -1,0 +1,293 @@
+.results-container {
+    .btn span {
+       font-family: $defaultFont;
+       margin-left:10px;
+    }
+
+    #filterContainer { //Actual Filters
+        .filters {
+            position:fixed;
+            //top:auto;
+            left:0px;
+            right:0px;
+            bottom:0px;
+            height:0px;
+            transition:all 0.25s ease-in;
+            text-align: center;
+            @include z-index(modal);
+
+            nav {
+                position:relative;
+                z-index:1000;
+                height:100%;
+                width:80%;
+                margin:0px auto;
+            }
+
+            
+            .transparent-bg {
+                position:fixed;
+                left:0px;
+                right:0px;
+                bottom:0px;
+                z-index:999;
+                height:0px;
+                background-color:$white;
+                transition:all 0.25s ease-in;
+                @include opacity(.97);
+            }
+
+            h3 {
+                margin:0px;
+            }
+            #filterToggleOff {
+                display: none;
+                cursor: pointer;
+                line-height: normal;
+                padding:5px 15px;
+                text-align: center;
+                margin:30px auto 0px;
+                //@include rounded(0px,0px,0px,0px);
+            }
+
+            .GuidedNavigationTitle {
+                display:flex;
+                justify-content: space-between;
+                align-items:flex-start;
+                height:70px;
+                margin-top:15px;
+                margin-bottom:0px;
+
+
+                span {
+                    font-size:16px;
+                    font-weight:bold;
+                    line-height: 30px;
+                }
+                a {
+                    font-size: 16px;
+                    cursor:pointer;
+                    line-height: 30px;
+                }
+            }
+            .filters-wrap {
+                width:100%;
+                text-align:left;
+
+                .filter-row {
+                    padding-bottom:20px;
+
+                    .filter-title {
+                        display:block;
+                        width:100%;
+                        font-size:12px;
+                        padding:.75em 2em;
+                        text-align: center;
+                        @include rounded(3px,3px,0px,0px);
+                        .caret {
+                            display:none;
+                        }
+                    }
+                    .filter-box {
+                        font-size:13px;
+                        padding:15px;
+                        box-sizing:border-box;
+                        border-width:1px;
+                        border-style:solid;
+                        @include rounded(0px,0px,3px,3px);
+
+                        .DimensionValue {
+                            margin-top:10px;
+
+                            &:first-child {
+                                margin-top:0px;
+                            }
+                            
+                            label {
+                                display:inline;
+                                cursor: pointer;
+
+                                span {
+                                    font-family: $defaultFont;
+                                    margin-left:10px;
+                                }
+                                &:before {
+                                    font-size:13px;
+                                }
+                            }
+                            input {
+                                display:none;
+                            }
+                            input[type=checkbox]:checked + label {
+
+                                &:before {
+                                    content:"\f14a";
+                                }
+                                span {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include screen-md-min {
+            .filters {
+                display: block;
+                position:relative;
+                top:auto;
+                left:auto;
+                right:auto;
+                bottom:auto;
+                height:auto;
+                z-index:0;
+
+                nav {
+                    width:100%;
+                }
+                .GuidedNavigationTitle {
+                    display:flex;
+                    justify-content: space-between;
+                    align-items:flex-start;
+                    height:50px;
+                    margin-top:0px;
+                    margin-bottom:0px;
+
+                    span {
+                        font-size:16px;
+                        font-weight:bold;
+                        line-height: 30px;
+                    }
+                    a {
+                        font-size: 16px;
+                        cursor:pointer;
+                        line-height: 30px;
+                    }
+                }
+                .filters-wrap {                    
+                    .filter-row {
+                        &:first-child {
+                            margin-top:0px;
+                        }
+                        button {
+                            display:block;
+                            width:100%;
+                            font-size:12px;
+                            .caret {
+                                display:none;
+                            }
+                        }
+                        .filter-box {
+                            font-size:12px;
+
+                            .DimensionValue {
+                                label {
+                                    display:inline;
+                                    margin-top:10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+body.toggle-filters {
+    overflow:hidden;
+    // #sortResultsListForm {
+    //     #filterToggleOn {
+    //         display: none;
+    //     }
+    // }
+    .results-container {
+        #filterContainer { //Actual Filters
+            .filters {
+                //top:0px;
+                height:100%;
+                overflow-y: scroll;
+
+                .transparent-bg {
+                    //top:0px;
+                    height:100%;
+                }
+                #filterToggleOff {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    // @include screen-sm-min {
+    //     #sortResultsListForm {
+    //         #filterToggleOn {
+    //             display: block;
+    //         }
+    //     }
+    // }
+    @include screen-md-min {
+        overflow: visible !important;
+        // #sortResultsListForm {
+        //     #filterToggleOn {
+        //         display: none !important;
+        //     }
+        // }
+
+        .results-container {
+            #filterContainer {
+                .filters {
+                    overflow:visible !important;
+                    .transparent-bg, #filterToggleOff {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Less specific targeting. 
+.clearFilterLnk {
+  display: none;
+}
+
+.filter-btn-wrapper {
+  position: relative;
+  padding: 2em;    
+  @include screen-md-min {
+    display: none;
+  }
+}
+
+#filterToggleOn {
+  line-height: normal;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 10px 0px;
+  border-radius: 0;
+  width: 100%;
+
+  .toggle-filters & {
+    display: none;
+  }
+
+  @include screen-sm-min {
+    border-radius: $btn-border-radius;
+    padding: .375em 2em;
+    position: static;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    margin-right:20px;
+    width: auto;
+  }  
+  //@TODO: Remove below when port ET results to branded. Rely on wrapper instead.
+  @include screen-md-min {
+    display: none;
+  }
+}
+

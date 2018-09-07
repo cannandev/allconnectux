@@ -1,0 +1,21 @@
+/**
+ *
+ * Forms.
+ *
+ */
+
+.form-control {
+    border-radius: 0;
+    &[placeholder] {
+      font-style: italic;
+    }
+ }
+
+ // ==========================================================================
+ // Email signup component.
+ // ==========================================================================
+ .email-signup {
+  border-color: $border-default;
+  text-align: center;
+ }
+

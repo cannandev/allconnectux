@@ -1,0 +1,105 @@
+/* -------------------------------------------
+//  Nav
+// -------------------------------------------*/
+
+.flex-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    // @include screen-md {
+    //   li {
+    //     a {
+    //       // padding: $navbar-link-padding-m;
+    //       // width: 100%;
+    //     }
+    //   }
+    // }
+    li {
+        @include screen-md {
+            display: block;
+        }
+        @include screen-md-min {
+            display: flex;
+        }
+        align-items: center;
+        a {
+            padding: $spacing-base;
+            // padding: $navbar-link-padding-m;
+            width: 100%;
+        }
+    }
+    // @include screen-md-min {
+    //   display: flex;
+    // }
+    @include screen-md {
+        display: block;
+    }
+}
+
+// Primary nav in navbar.
+.nav-primary {
+    @include screen-md-min {
+        display: flex;
+        // flex: 1;
+        // justify-content: center;
+        justify-content: flex-start;
+        li {
+            &:after {
+                @include font-size($font-size-md);
+                font-weight: 100;
+                content: '|';
+                // Add pipes at the end of each link in navbar.
+            }
+            // Remove pipe on the last li tag.
+            &:last-child {
+                &:after {
+                    content: '';
+                }
+            }
+        }
+    }
+    @include screen-md {
+        text-align: center;
+        li {
+            &:after {
+                content: ''
+            }
+        }
+    }
+}
+
+.order-status-nav {
+    @include screen-md-min {
+        display: flex;
+        margin-left: auto;
+    }
+    display: block;
+    a {
+        display: inherit;
+    }
+}
+
+// Footer navs.
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    @include screen-sm {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    li {
+        display: flex;
+        a {
+            @include font-size($font-size-sm);
+            padding: $spacing-xs $spacing-base;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

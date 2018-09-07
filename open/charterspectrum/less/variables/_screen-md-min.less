@@ -1,0 +1,120 @@
+/* Media queries for Medium devices - Desktops (≥992px), 
+ * Bootstrap variable @screen-md-min
+ * Container width 970px */
+
+@media (min-width: @screen-md-min) {
+	.bar {
+		font-size:20px;
+	}
+	#main-header {
+		position: static;		
+	}
+
+	.main-nav {	
+		& > .container {
+			//width: 780px;
+		}
+	}
+
+	.navbar-right {
+		.px2em(37);
+			strong {
+				margin-top: -12px;
+			}		
+	}	
+
+	#main-content {
+		margin-top: 20px;
+	}	
+
+	.hero {
+		.hero-container {
+			background-image: url('../images/hero_img_2400.jpg');
+			background-size:1200px auto;
+			height:501px;
+
+			.hero-text-wrap {
+				h2 {
+					line-height: 18px;
+					margin:70px 0px 0px 0px;
+					
+					.line-break {
+						display:block;
+						margin-bottom:15px;
+						margin-left:0px;
+					}
+				}
+
+				.cols {
+					margin:20px auto 0px;
+
+					.from {
+						font-size:20px;	
+					}
+
+					.col {
+						font-size:80px;
+						line-height: 80px;
+
+						sup {
+							font-size:44px;
+						}
+
+						span {
+							font-size:12px;
+							line-height: normal;
+
+							&:first-child {
+								font-size:22px;
+							}
+						}
+					}
+				}
+				ul {
+					margin:20px auto 0px;
+
+					li {
+						font-size:14px;
+					}
+				}
+				h3 {
+					margin-top:20px;
+					font-size:20px;
+				}
+				p {
+					margin-top:20px;
+					font-size:30px;
+				}
+			}
+		}
+	}
+
+	.mid-tfn {
+		padding-top: 3.5em;
+		h1 {
+			.px2em(32);
+		}
+	}	
+
+	.product {
+		margin: 0 0 2.250em;
+		padding: 2.5em 0 2em 0;
+		max-width: 295px;
+		ul {
+			padding: 0;			
+			li {
+				.px2em(15);
+			}
+		}		
+		h3 {
+			.px2em(23);
+			// padding: 0 2.5em;
+		}
+		.price {
+			.px2em(45);
+			sup {
+				top: -15px;
+			}
+		}
+	}
+}

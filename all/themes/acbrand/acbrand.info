@@ -1,0 +1,44 @@
+
+name = AC Brand
+description = Responsive parent theme for Allconnect Branded pages using Bootstrap and LESS
+package = Core
+version = VERSION
+core = 7.x
+
+; Unset core stylesheets
+; stylesheets[system][] = system.base.css
+stylesheets[system][] = system.menus.css
+stylesheets[system][] = system.messages.css
+stylesheets[system][] = system.theme.css
+stylesheets[field][theme] = field.css
+stylesheets[node][] = node.css
+stylesheets[search][] = search.css
+stylesheets[user][] = user.css
+
+; Add custom styles
+stylesheets[all][] = css/acbrand.css
+stylesheets[all][] = css/skin.css
+
+; Unset contrib stylesheets
+stylesheets[comment][] = comment.css
+stylesheets[ctools][css] = ctools.css
+
+; Add javascript files
+scripts[] = js/acbrand.js
+
+; Set block regions
+regions[header_banner] = Header Banner
+regions[content] = Content
+regions[mid_banner] = Mid Banner
+regions[featured] = Featured
+regions[footer_banner] = Footer Banner
+regions[footer_logos] = Footer Logos
+regions[footer_brand] = Brand Footer
+regions[footer_corporate] = Corporate Footer
+
+; Toggle Display of Features
+features[] = logo
+features[] = name
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu

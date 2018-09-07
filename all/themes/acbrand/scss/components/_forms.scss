@@ -1,0 +1,26 @@
+/**
+ *
+ * Forms.
+ *
+ */
+
+// ==========================================================================
+// Email signup component.
+// ==========================================================================
+.email-signup {
+    border: 1px solid;
+    padding: $spacing-md;
+}
+
+// ==========================================================================
+// Address capture component.
+// ==========================================================================
+.address-capture-form {
+    label {
+        font-weight: normal;
+    }
+    .form-hint {
+        display: block;
+        @include font-size($font-size-sm);
+    }
+}

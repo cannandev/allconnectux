@@ -1,0 +1,22 @@
+//** Brand specific nav settings.
+.nav-primary,
+.footer-nav-primary {
+  color: $nav-link-color;
+}
+
+.navbar-brand {
+  // Remove padding around Charter logo.
+  padding: 0 1em;
+}
+
+.order-status-nav {
+	// Hide Order status and navbar-cart for Charter.
+	display: none;
+	
+  a {
+    color: $nav-link-color;
+    &:hover {
+      color: $nav-link-color;
+    }
+  }
+}

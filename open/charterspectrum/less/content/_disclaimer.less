@@ -1,0 +1,38 @@
+/* 
+ * Disclaimer styles
+ *
+ */
+
+.disclaimer {
+	padding: 5em 1.750em .5em;
+	text-align: center;
+	.px2em(12);	
+	h2 {
+		color: @brand-secondary;
+		font-size: 12px;
+		line-height: 14px;
+		margin-bottom: 1em;
+	}
+	&>span {
+		text-decoration: underline;
+		color: @dark;
+		font-weight: bold;
+		outline: 0;
+		text-align: center;
+		display: block;
+		margin-bottom:30px;
+	}
+	a {
+		text-overflow:ellipsis;
+	}
+}
+
+#disclaimer-wrapper {
+	text-align: left;
+	.close-link {
+		text-align: center;
+		display: block;
+		border-bottom: 0;
+		text-decoration: underline;
+	}
+}

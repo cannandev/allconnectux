@@ -1,0 +1,91 @@
+/* -------------------------------------------
+//  Tables
+// -------------------------------------------*/
+
+.compare-table {
+    text-align: center;
+    table-layout: fixed;
+    @include screen-sm {
+        table-layout: auto;
+    }
+    th {
+        text-align: center;
+    }
+    td {
+        height: $table-td-height;
+    }
+    >tbody {
+        >tr {
+            >td {
+                vertical-align: middle;
+            }
+        }
+    }
+    //
+    // This is a hack to override Bootstrap's table behavior.
+    // Try not be so specific in your nesting. :(
+    // AD*
+    //
+}
+
+.compare-highlight {
+    @include font-size($font-size-md);
+    font-weight: bold;
+}
+
+.table-features {
+    width: $table-feature-width;
+}
+
+.table-feature {
+    text-align: left;
+    @include screen-sm {
+
+    }
+    .feature-title {
+        // flex-flow: column;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .feature-icon {
+        width: $filter-icon-size;
+        height: $filter-icon-size;
+        display: inline-block;
+    }
+}
+
+.feature-desc-group {
+    align-items: center;
+    @include screen-md-min {
+        display: flex;
+    }
+    @include screen-md {
+        display:block;
+        text-align: center;
+    }
+}
+
+.feature-desc {
+    display: flex;
+    padding-left: $spacing-base;
+    @include screen-md {
+        display: block;
+        padding-left: 0;
+        text-align: center;
+        justify-content: center;
+        strong {
+            display: block;
+            // margin-bottom: spacing-xs;
+            // I really don't want to add rules to a raw tag.
+            // Let's consider giving the title a class and assigning rules to that.
+        }
+    }
+}
+
+.feature-title {
+    justify-content: center;
+    display: flex;
+    flex: 0 0 80px;
+    // Possibly make a variable out of this. May not be necessary though.
+}

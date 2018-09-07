@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Custom settings and pages for Allconnect Branded sites.
+ */
+
+
+ /**
+ * Alters system_site_information_settings().
+ *
+ * Add more fields to site information settings.
+ */
+function acbrand_form_system_site_information_settings_alter(&$form, $form_state, $form_id) {
+  $form['site_information']['site_phone'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Site Phone Number'),
+    '#default_value' => variable_get('site_phone', '1-844-263-2443'),
+    '#required' => TRUE,
+  );
+  $form['site_information']['site_copyright'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Copyright Text'),
+    '#default_value' => variable_get('site_copyright', 'BRAND. All rights reserved. All content on this Web site is proprietary.'),
+    '#description' => t('Used in the footer next to the <em>copyright year</em>.'),
+  );
+  $form['site_information']['site_callin'] = array(
+    '#type' => 'switch',
+    '#title' => t('Enable Call-in Checkout Overlay'),
+    '#default_value' => variable_get('site_callin', FALSE),
+    '#description' => t('Show selected product and call-in info. Disables the online checkout.'),
+  );
+  unset($form['site_information']['site_slogan']);
+}
+
+/**
+ * Implements hook_menu().
+ */
+function acbrand_menu() {
+
+  $items['acheader.html'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('AC Header'),
+    'description' => 'Header for ACDC pages',
+    'page callback' => 'acbrand_base_page',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+
+  $items['acfooter.html'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('AC Footer'),
+    'description' => 'Footer for ACDC pages',
+    'page callback' => 'acbrand_base_page',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+
+  $items['404.html'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Page Not Found'),
+    'description' => 'Footer for ACDC pages',
+    'page callback' => 'acbrand_base_page',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );   
+
+  return $items;
+}
+
+/**
+ * Page callback. Uses theme template for markup.
+ * 
+ * @see page--acdc-header.tpl.php
+ * @see page--acdc-footer.tpl.php
+ */
+function acbrand_base_page() {
+  $content = '';
+
+  return $content;
+}
+

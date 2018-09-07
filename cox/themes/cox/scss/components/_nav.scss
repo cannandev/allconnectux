@@ -1,0 +1,31 @@
+//** Brand specific nav settings.
+.nav-primary,
+.footer-nav-primary {
+  color: $nav-link-color;
+}
+
+.navbar-brand {
+  // Remove padding around Cox logo.
+  padding: 0 1em;
+}
+
+.navbar-brand-img {
+  max-width: 156px;
+}
+
+.nav-primary {
+  li {
+    &:after {
+      color: $gray-light;
+    }
+  }
+}
+
+.order-status-nav {
+  a {
+    color: $nav-link-color;
+    &:hover {
+      color: $nav-link-color;
+    }
+  }
+}

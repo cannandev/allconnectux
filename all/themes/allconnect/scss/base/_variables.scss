@@ -1,0 +1,72 @@
+// ==========================================================================
+// Variables.
+// ==========================================================================
+
+// Primary Colors.
+/* @todo: Replace red and blue with semantic names. brand-primary, brand-secondary */
+$white:                   #FFF;
+$red:             				#C8001D;
+$blue:                    #2B9CD8;
+$black:                   #000;
+$gray-light:              #ebebeb;
+$gray-medium:             #5A5A5C;
+$gray-charcoal:           #242424;
+
+$brand-primary:           $red;
+
+//### Primary color for call to action elements.
+$cta-primary:               $blue;
+
+// Body colors.
+$body-font-color:           $black;
+$body-bg-color:             $white;
+
+// Border colors.
+$border-default:            $gray-medium;
+$border-light:              $gray-light;
+
+// Headline colors.
+$hl-primary-color:          $red;
+$hl-secondary-color:        $gray-medium;
+
+// Link colors.
+$nav-link-color:            $blue;
+$link-color:                $blue;
+
+// Cart
+$cart-badge-font-color:     $red;
+
+// Horizontal Rule.
+$hr-color:                  $gray-light;
+
+
+// Footer colors.
+$footer-bg-light:           $white;
+
+$footer-bg-dark:            $gray-charcoal;
+$footer-dark-text-color:    $white;
+$footer-dark-link-color:    $footer-dark-text-color;
+
+// Filters.
+$filter-body-font-color:    $gray-medium;
+$filter-bg-color:           $white;
+
+// Toggle color.
+$navbar-toggle-color:       $red;
+
+// Navbar Links.
+$navbar-link-bg-hover:      $blue;
+$navbar-link-border-color:  $gray-light;
+$navbar-link-hover:         $white;
+
+// Filters.
+$filter-price-color:        $red;
+
+// Buttons.
+$btn-border-radius: 1.875em; //30px.
+$btn-primary-bg:            $blue;
+$btn-primary-bg-hover:      darken($blue, 8%);
+
+
+
+

@@ -1,0 +1,22 @@
+# Ignore SVN folders
+*/.svn*
+.svn*
+
+# Ignore configuration files that may contain sensitive information.
+*/settings*.php
+sites.php
+*.DS_Store
+*.htaccess
+
+# Ignore paths that contain user-generated content.
+*/files
+*/private
+
+# Ignore developer gulp files
+gulp/helpers/developer.js
+node_modules
+
+
+
+
+

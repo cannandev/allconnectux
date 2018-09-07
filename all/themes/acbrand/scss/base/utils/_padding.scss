@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Padding Classes
+   ========================================================================== */
+
+// -- Small --//
+.pd-sm {
+    padding: $spacing-base;
+}
+
+.pd-x-sm {
+    padding-left: $spacing-base;
+    padding-right: $spacing-base;
+}
+
+.pd-y-sm {
+    padding-top: $spacing-base;
+    padding-bottom: $spacing-base;
+}
+
+.pd-t-sm {
+    padding-top: $spacing-base;
+}
+
+.pd-b-sm {
+    padding-bottom: $spacing-base;
+}
+
+.pd-l-sm {
+    padding-left: $spacing-base;
+}
+
+.pd-r-sm {
+    padding-right: $spacing-base;
+}
+
+// -- Medium --//
+.pd-md {
+    padding: $spacing-md;
+}
+
+.pd-x-md {
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+}
+
+.pd-y-md {
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
+}
+
+.pd-t-md {
+    padding-top: $spacing-md;
+}
+
+.pd-b-md {
+    padding-bottom: $spacing-md;
+}
+
+.pd-l-md {
+    padding-left: $spacing-md;
+}
+
+.pd-r-md {
+    padding-right: $spacing-md;
+}
+
+// -- Large --//
+.pd-lg {
+    padding: $spacing-lg;
+}
+
+.pd-x-lg {
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+}
+
+.pd-y-lg {
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+}
+
+.pd-t-lg {
+    padding-top: $spacing-lg;
+}
+
+.pd-b-lg {
+    padding-bottom: $spacing-lg;
+}
+
+.pd-l-lg {
+    padding-left: $spacing-lg;
+}
+
+.pd-r-lg {
+    padding-right: $spacing-lg;
+}
+
+// -- Xtra Large--//
+.pd-xl {
+    padding: $spacing-xl;
+}
+
+.pd-x-xl {
+    padding-left: $spacing-xl;
+    padding-right: $spacing-xl;
+}
+
+.pd-y-xl {
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+}
+
+.pd-t-xl {
+    padding-top: $spacing-xl;
+}
+
+.pd-b-xl {
+    padding-bottom: $spacing-xl;
+}
+
+.pd-l-xl {
+    padding-left: $spacing-xl;
+}
+
+.pd-r-xl {
+    padding-right: $spacing-xl;
+}

@@ -1,0 +1,14 @@
+//** Brand specific nav settings.
+.nav-primary,
+.footer-nav-primary {
+  color: $nav-link-color;
+}
+
+.order-status-nav {
+  a {
+    color: $nav-link-color;
+    &:hover {
+      color: $nav-link-color;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.changeLocContents {
+    background-color:$cta-secondary-dark;
+}
+#multipleProvidersAlert {  
+    strong, p {
+        color:$cta-secondary;
+    }
+    div {
+        &.close-alert {
+            color:$cta-secondary;
+        }
+        &.bg-cover {
+            background-color:$cta-secondary;
+        }
+        &.bg-border {
+            border-color:$cta-secondary;
+        }
+    }
+}
+.results-container {
+    .compareBtnDiv {
+        background-color:$gray-light;
+        a {
+            color:$gray;
+            
+            .resultsCountAC {
+                color:$gray;
+            }
+        }
+    }
+    #filterToggleOn, #filterToggleOff {
+        &:hover {
+            background-color:$cta-secondary;
+            color:$white;
+        }
+
+        @include screen-md-min {
+            &:hover {
+                background-color:transparent;
+                color:$cta-secondary;
+            }
+        }
+    }
+    #resultsContainer {
+        .result {
+            .result-wrap {
+                #superCol1 {
+                    .more-details {
+                        color:$cta-secondary;
+                    }
+                }
+
+                #superCol2 {
+                    #minorCol1 {
+                       .price-lockup {
+                            color:$cta-primary; 
+                        }
+                        .btn {
+                            background-color:$cta-secondary;
+                            color:$white;
+
+                            &:hover {
+                                background-color:transparent;
+                                color:$cta-secondary;
+                            }
+                        }
+                        #callInNumber {
+                            span, strong {
+                               color:$cta-secondary;
+                            }
+                        }
+                    }
+                    #minorCol2 {
+                        .meta-wrap {
+                            &:before,p,a {
+                                color:$cta-secondary;
+                            }
+                        }
+                    }
+                }
+                @include screen-sm-min {
+                    #superCol1 {
+                        h3 {
+                            color:$cta-primary;
+                        }
+                    }
+                }
+            }
+            .reveal-panel {
+                h3 {
+                    color:$cta-primary
+                }
+                .reveal-panel_promo-box {                    
+                    p {
+                        color:$cta-secondary;
+                        border-color:$cta-secondary;
+                    }
+                }
+            }
+        }
+    }
+    .results-btm {
+        .pagination {       
+           li {
+
+                a {
+                    color:$cta-secondary;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                &.active {
+                    a {
+                        color:$white;
+                        background-color:$cta-secondary;
+                    }
+                }
+            }
+        }
+    }
+}

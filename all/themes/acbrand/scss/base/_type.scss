@@ -1,0 +1,28 @@
+/* -------------------------------------------
+//  Typography
+// -------------------------------------------*/
+
+.section-title {
+    text-align: center;
+}
+
+.headline-base {
+    @include font-size(24px);
+    font-weight: bold;
+    margin-bottom: $spacing-xs;
+    .node-content & {
+        @include screen-md-min {
+    	   margin-bottom: $spacing-lg;
+        }
+    }
+}
+
+.headline-base,
+.sub-heading-base {
+    margin-top: 0;
+    margin-bottom: $spacing-base;
+}
+
+.fw-normal {
+    font-weight: normal;
+}

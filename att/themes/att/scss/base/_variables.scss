@@ -1,0 +1,83 @@
+// ==========================================================================
+// Basic colors.
+// ==========================================================================
+
+$white:                   #FFF;
+$black:                   #000;
+$gray:                    #222222;
+$gray-light:              darken($white, 8%);
+
+ 
+// DO NOT ADD MORE BASIC COLORS. USE SASS lighten() OR darken() FUNCTIONS
+// IN YOUR CODE. SEE http://sasstoolkit.com
+// OR CREATE A NEW SEMANTIC VARIABLE BELOW.
+
+
+// ==========================================================================
+// Branded color map.
+// ==========================================================================
+
+// Actions.
+$cta-primary:             #0574ac;           // 1) Primary CTA Color
+$cta-secondary:           lightblue;      	// 2a) Secondary CTA light on dark
+$cta-secondary-dark:      $gray;           // 2b) Secondary CTA dark on light
+
+
+// Headlines.
+$hl-primary-color:          $white;       // 4) h1 Heading Color
+$hl-secondary-color:        $gray;        // 5) Headings (h2-h5), headline color
+
+
+// Navbar Links.
+$nav-link-color:            #0574ac;  // 6) Top Nav Links Color
+
+
+// Highlights.
+$highlight-primary:         #ff7200;    // 7) Primary Highlight Color
+$highlight-secondary:       #ff7200;        // 8) Secondary Highlight Color
+
+
+// Link colors.
+$link-color:                $cta-primary;      // default link color within content
+$link-color-hover:          $cta-secondary;
+
+// ==========================================================================
+// Other site colors.
+// ==========================================================================
+
+// Body colors.
+$body-font-color:           $black;
+$body-bg-color:             $white;
+
+
+// Mobile nav.
+$navbar-link-bg-hover:      $nav-link-color;
+$navbar-link-border-color:  $gray-light;
+$navbar-link-hover:         $white;
+$navbar-toggle-color:       $nav-link-color;  // mobile toggle
+
+
+// Cart.
+$cart-badge-font-color:     $highlight-primary;
+
+
+// Buttons.
+$btn-border-radius:         1.875em; //30px.
+$btn-primary-bg:            $highlight-primary;
+
+
+// Filters.
+$filter-body-font-color:    $gray;
+$filter-bg-color:           $white;
+$filter-price-color:        $cta-primary;
+
+
+// Border colors.
+$border-medium:            $gray;
+$border-light:             darken($white, 8%);
+$border-default:           rgba($white, .5);
+
+// Search.
+
+// Callback Checkout.
+$checkout-label-color:     lighten($gray, 28%);

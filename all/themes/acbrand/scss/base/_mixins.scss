@@ -1,0 +1,158 @@
+//** Global mixins for a great cause
+// #Set rem font size with pixel fallback
+// Usage:
+//    p {
+//       @include font-size(14px)
+//    }
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    // font-size: $size;
+    font-size: calculateRem($size);
+}
+
+//////////////////////////////////////////////////////////////////////
+//#Breakpoint Mixins
+// Usage:
+// .sidebar {
+//   float: left;
+//   @include bp-small {
+//     float: none;
+//   }
+// }
+
+@mixin screen-xxs {
+    @media only screen and (max-width: $screen-xxs) {
+        @content;
+    }
+}
+
+@mixin screen-xxs-min {
+    @media only screen and (min-width: $screen-xxs) {
+        @content;
+    }
+}
+
+@mixin screen-xs {
+    @media only screen and (max-width: $screen-xs) {
+        @content;
+    }
+}
+
+@mixin screen-xs-min {
+    @media only screen and (min-width: $screen-xs-min) {
+        @content;
+    }
+}
+
+@mixin screen-sm {
+    @media only screen and (max-width: $screen-sm) {
+        @content;
+    }
+}
+
+@mixin screen-sm-min {
+    @media only screen and (min-width: $screen-sm) {
+        @content;
+    }
+}
+
+@mixin screen-md {
+    @media only screen and (max-width: $screen-md) {
+        @content;
+    }
+}
+
+@mixin screen-md-min {
+    @media only screen and (min-width: $screen-md-min) {
+        @content;
+    }
+}
+
+@mixin screen-lg {
+    @media only screen and (max-width: $screen-lg) {
+        @content;
+    }
+}
+
+@mixin screen-lg-min {
+    @media only screen and (min-width: $screen-lg-min) {
+        @content;
+    }
+}
+
+@mixin screen-lg-max {
+    @media only screen and (max-width: $screen-lg-min) {
+        @content;
+    }
+}
+
+@mixin screen-lg-w {
+    @media only screen and (min-width: $screen-lg-w) {
+        @content;
+    }
+}
+
+@mixin screen-lg-w-min {
+    @media only screen and (min-width: $screen-lg-w-min) {
+        @content;
+    }
+}
+
+@mixin screen-xl-min {
+    @media only screen and (min-width: $screen-xl-min) {
+        @content;
+    }
+}
+
+@mixin screen-sm-to-md {
+    @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-md) {
+        @content;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+//# Transition mixin
+// Usage:
+// a {
+//   color: gray;
+//   @include transition(color .3s ease);
+//   &:hover {
+//     color: black;
+//   }
+// }
+@mixin transition($transition...) {
+    transition: $transition;
+}
+
+//////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////
+//# Rounded mixin
+@mixin rounded($TR,$TL,$BL,$BR) {
+  -webkit-border-top-right-radius: $TR;
+  -webkit-border-bottom-right-radius: $BR;
+  -webkit-border-bottom-left-radius: $BL;
+  -webkit-border-top-left-radius: $TL;
+  -moz-border-radius-topright: $TR;
+  -moz-border-radius-bottomright: $BR;
+  -moz-border-radius-bottomleft: $BL;
+  -moz-border-radius-topleft: $TL;
+  border-top-right-radius: $TR;
+  border-bottom-right-radius: $BR;
+  border-bottom-left-radius: $BL;
+  border-top-left-radius: $TL;
+}
+
+/////////////////////////////////////////////////////////////////////
+//# Opacity
+
+@mixin opacity($opacity) {
+    -moz-opacity: $opacity;
+    -khtml-opacity: $opacity;
+    -webkit-opacity: $opacity;
+    opacity: $opacity;
+}

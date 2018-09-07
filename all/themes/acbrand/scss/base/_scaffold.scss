@@ -1,0 +1,87 @@
+// Reset to default 16px font size
+html,
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 100%;
+}
+//Z-index trick for reporting correct media queries to JS
+body {
+    position:relative;
+    z-index:1;
+
+    @include screen-xs-min {
+        z-index:2;
+    }
+    @include screen-sm-min {
+        z-index:3;
+    }
+    @include screen-md-min {
+        z-index:4;
+    }
+    @include screen-lg-min {
+        z-index:5;
+    }
+}
+
+//** Custom Boostrap layout classes.
+a,
+button {
+    @include transition(all $ease-time-default $ease-primary);
+    &:hover {
+        @include transition(all $ease-time-default $ease-primary);
+        text-decoration: none;
+    }
+}
+
+
+/* IE10 viewport hack for Surface/desktop Windows 8 bug
+ * http://getbootstrap.com/getting-started/#support-ie10-width
+ */
+
+@-webkit-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
+    width: device-width;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+//**Containers and wrappers */
+.navbar {
+    margin-bottom: 0;
+}
+
+
+// default flexbox container.
+.flex-container {
+    display: flex;
+    align-items: center;
+    @include screen-md {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+// Setting default padding on items in 'flex-container'.
+.flex-item {
+    padding-left: $spacing-base;
+    padding-left: $spacing-base;
+}
+
+.flex {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}

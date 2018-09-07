@@ -1,0 +1,20 @@
+//** Z-index values and function for better layering.
+
+// -- Z-index map of values.
+$z-index: (
+  modal              : 200,
+  cta-banner         : 100,
+  navigation         : 90,
+  footer             : 80,
+  hero-image-content : 20,
+  hero-image				 : 10,
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+

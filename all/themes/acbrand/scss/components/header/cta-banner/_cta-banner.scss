@@ -1,0 +1,128 @@
+/*=========================================
+=            Header CTA Banner            =
+=========================================*/
+#header-banner {
+    height: 0;
+}
+
+.header-cta-banner {
+    // Keep sticky banner above everything else.
+    @include z-index(cta-banner);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: $spacing-xs;
+    @include screen-sm {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .banner-title {
+        @include font-size($font-size-base);
+        margin: 0;
+    }
+    .cta-banner__telgroup {
+        margin-left: auto;
+        margin-right: 0;
+        @include screen-sm {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+    }
+    &.affix {
+        // Do this when user scrolls down.
+        font-weight: normal;
+        box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.11), 0px 1px 2px 0px rgba(0, 0, 0, 0.20);
+        top: 0;
+        // Will keep banner at the top on scroll
+        // Probably should make a box-shadow mixin for this.
+        .banner-title {
+            @include font-size(18px);
+            font-weight: normal;
+        }
+        .banner-phone {
+            @include font-size($font-size-md);
+            font-weight: bold;
+        }
+        .cta-banner__telgroup {
+            margin: 0 auto !important;
+        }
+    }
+}
+
+.header-cta-banner__phone {
+    @include font-size(30px);
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: $spacing-base;
+    margin-right: $spacing-base;
+    flex-wrap: nowrap;
+    @include screen-sm {
+        margin-right: 0;
+        @include font-size(18px);        
+    }
+    @include screen-xxs {
+        margin-left: 10px;
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: inherit;
+        }
+    }
+}
+
+// Agents Available Module
+
+.agent {
+    $agentbox-before-spacing: 16px;
+    $agentbox-after-spacing: 19px;
+    position: relative;
+    padding: $spacing-xs $spacing-base;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    @include screen-sm {
+        padding: $spacing-xs;
+    }
+    // create arrow point
+    &:after,
+    &:before {
+        left: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    &:after {
+        margin-top: -18px;
+        border-width: 18px;
+    }
+}
+
+.agent-icon {
+    margin-right: $spacing-base;
+    width: 50px;
+    display:inline-block;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.agent-text {
+    display: inline-block;
+    text-transform: lowercase;
+    margin-bottom: 0;    
+    // display: flex;
+    // flex-wrap: wrap;
+    // flex-direction: column;
+    @include screen-sm {
+        font-size: $font-size-xs;
+    }    
+}
+/*=====  End of Header CTA Banner  ======*/

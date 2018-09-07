@@ -1,0 +1,71 @@
+#filterContainer {
+	.filters-wrap {
+		border: 1px solid $gray-light;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		font-size: 13px;
+		margin-bottom: $spacing-md;
+	}
+
+	.filter-title {
+		background-color: $cta-secondary;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		font-size: 13px;
+		padding: 1em;
+		h4 {
+			color: #fff;			
+			display: inline;
+			font-size: inherit;
+			font-weight: normal;
+			margin: 0;
+			text-transform: uppercase;			
+		}
+		a {
+			color: #fff;
+			font-weight: bold;
+			text-decoration: underline;
+			float: right;
+			@include screen-md {
+				color: $cta-secondary;
+			}
+		}
+	}
+	h5 {
+		font-size: 13px;
+		text-transform: uppercase;
+		margin-top: $spacing-md;
+		margin-bottom: $spacing-sm;
+	}
+	.filter-row {
+		padding-left: 1em;
+		&:not(:last-child) {
+			padding-bottom: 0 !important;
+		}
+	}
+}
+
+#filterToggleOn {
+	background-color: $highlight-primary;
+	border: 0;
+	text-transform: uppercase;
+	&:hover {
+		color: $white;
+	}
+	@include screen-sm-to-md {
+		border-radius: $btn-border-radius;
+		position: absolute;
+		right: 0;
+		margin: 0 1em;
+	}
+}
+
+.DimensionValue {
+	input {
+		outline: 0;
+	}
+	input[type=checkbox]:checked + label {
+			color: $cta-secondary;
+	}
+}
+

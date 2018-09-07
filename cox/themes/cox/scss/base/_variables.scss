@@ -1,0 +1,85 @@
+// ==========================================================================
+// Basic colors.
+// ==========================================================================
+
+$white:                   #FFF;
+$white-alpha:             rgba($white, 0.5);
+$black:                   #000;
+$gray:                    #999;
+$gray-light:              #ebebeb;
+$gray-dark:               #555;
+$gray-medium:             #777;
+$gray-charcoal:           #242424;
+
+//Checkout specific
+$white-bg:                #f5f5f3;
+$label-gray:              #a2a2a1;
+$blue-lightest:           #e7f0f5;
+
+// ==========================================================================
+// Unique brand colors.
+// ==========================================================================
+$brand-primary:             #333;
+$brand-secondary:           #0078b5;
+
+//### Primary color for call to action elements.
+$cta-primary:               $brand-secondary;
+$cta-secondary-dark: 				#bf2296;
+
+// Headlines.
+$hl-primary-color:          $white;
+$hl-secondary-color:        #333;
+
+// Highlights.
+$highlight-primary:         #0079b6;
+
+// Link colors.
+$nav-link-color:            $brand-secondary;
+$link-color:                $brand-secondary;
+
+// ==========================================================================
+// Other site colors.
+// ==========================================================================
+
+// Body colors.
+$body-font-color:           $gray;
+$body-bg-color:             $white;
+
+// Border colors.
+$border-medium:            $gray-medium;
+$border-light:             $gray-light;
+$border-default:           $white-alpha;
+
+// Cart
+$cart-badge-font-color:     $hl-secondary-color;
+
+// Horizontal Rule.
+$hr-color:                  $gray-light;
+
+// Footer colors.
+$footer-bg-light:           $white;
+$footer-bg-dark:            $gray-charcoal;
+$footer-dark-text-color:    $white;
+$footer-dark-link-color:    $footer-dark-text-color;
+
+// Filters.
+$filter-body-font-color:    $gray-medium;
+$filter-bg-color:           $white;
+$filter-price-color:        $highlight-primary;
+
+// Mobile nav.
+$navbar-link-bg-hover:      $brand-secondary;
+$navbar-link-border-color:  $gray-light;
+$navbar-link-hover:         $white;
+$navbar-toggle-color:       $brand-primary;
+
+
+// Buttons.
+$btn-border-radius:         1.875em; //30px.
+$btn-primary-bg:            $brand-secondary;
+$btn-primary-bg-hover:      darken($brand-secondary, 8%);
+
+
+
+
+

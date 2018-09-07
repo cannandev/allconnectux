@@ -1,0 +1,1 @@
+!function($){$(document).ready(function(){$("#navbar .search-toggle").click(function(){$("#site-search").toggleClass("show")})})}(jQuery);

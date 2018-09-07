@@ -1,0 +1,31 @@
+{
+  "name": "allconnect",
+  "version": "2.1.0",
+  "description": "Flexible architecture for compiling Sass, CSS, js and more!",
+  "main": "gulpfile.js",
+  "author": "anthony daniel <anroosdan@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-pleeease": "^2.0.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "postcss-fixes": "^1.4.0",
+    "postcss-flexboxfixer": "0.0.5",
+    "postcss-flexibility": "^1.1.0",
+    "postcss-scss": "^0.1.8",
+    "postcss-discard-duplicates": "^2.0.1",
+    "postcss-reporter": "^1.4.1",
+    "require-dir": "^0.3.0",
+    "stream-combiner": "^0.2.2",
+    "stylelint": "^7.0.3"
+  }
+}

@@ -1,0 +1,190 @@
+/* ----------------------------------------------------------
+//  Hero for Landing Pages
+// ---------------------------------------------------------- */
+.hero-featured {
+	min-height: 320px; // needed for FF
+	@include screen-lg-min {
+		height: $hero-height-xs;
+	}
+
+	.hero-image-header {
+		@include screen-lg-min {
+			text-align: left;
+		}	
+	}
+
+	.hero-image-content { 				// flex container
+		padding: $spacing-base;
+		height: 100%;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;		
+		@include screen-sm-min {
+			max-width: 270px;
+			padding: $spacing-md 0;
+		}
+		@include screen-md-min {
+			max-width: 440px;
+			padding: $spacing-base 0;
+		}
+		@include screen-lg-min {
+			flex-flow: row wrap;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}		
+	}
+
+	.hero-image-headline__title {
+	 	height: $hero-title-height;
+	 	margin: 0 auto;
+	 	font-weight: normal;
+	 	line-height: 1.4;
+		@include font-size($font-size-md);
+		@include screen-md-min {
+			height: auto;
+			margin-bottom: $spacing-base;
+		}
+		@include screen-lg-min {
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+		}
+	}
+}
+
+.hero-product {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.hero-product__price {
+	height: 110px;
+	max-width: 165px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;	
+	
+	&:after, 
+	&:before {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 0;
+    height: 0;
+    content: ' ';
+    pointer-events: none;
+    border: solid transparent;
+	}
+	&:after {
+		border-width: 55px;
+		margin-top: -55px;		
+	}
+
+	.filter-text {
+		padding: $filter-featured-spacing;
+	}
+
+	.filter-price-group {
+		justify-content: flex-start;
+	}
+
+	.filter-price {
+		font-weight: normal;
+		font-size: 3em;
+	}
+
+	.filter-label, 
+	.filter-label-inline,
+	.filter-terms {
+		font-size: $font-size-xs;
+		margin-bottom: 0;
+	}
+
+	.filter-terms {
+		margin-top: 0;
+		text-align: left;
+	}
+
+
+}
+
+.hero-product__features {
+	margin-left: 4.5em;
+	ul {
+		margin-left: 0;
+		padding-left: 20px;
+		@include font-size($font-size-sm);
+	}
+	li {
+		margin-top: $spacing-xxs;
+	}
+}
+
+.hero-promo {
+	margin-top: $spacing-base;
+	width: 100%;
+	img {
+		float: left;
+		max-height: 2em;
+		margin-right: 1em;
+	}
+}
+
+.hero-promo__text {
+	float: left;
+	@include font-size($font-size-sm);
+	p {		// Drupal override
+		margin-bottom: 5px;
+		line-height: 1;
+	}			
+}
+
+.hero-product, 
+.hero-promo {	
+	@include screen-lg {
+		display: none;
+	}
+}
+
+.hero-cta {
+	margin-top: 75%;
+	@include screen-xs-min {
+		margin-top: 55%;
+	}
+	@include screen-sm-min {
+		margin-top: 0;
+	}
+	@include screen-md-min {
+		text-align: center;
+	}
+	@include screen-lg-min {
+		width:100%;		
+	}	
+}
+
+.hero-cta__telgroup {
+	border-width: 1px;
+	border-style: solid;
+	padding: $spacing-sm $spacing-xxs;
+	margin: $spacing-base 0;
+	@include font-size($font-size-md);
+	p {	
+		line-height: 1.2;
+		margin-bottom: 0;
+	}
+	@include screen-sm-min {
+		padding: $spacing-base $spacing-xxs;
+	}	
+}
+
+.hero-cta__link {
+	display: block;
+	@include font-size($font-size-sm);
+	&, &:focus {
+		outline: 0;
+	}
+}

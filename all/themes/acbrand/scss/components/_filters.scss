@@ -1,0 +1,224 @@
+/* -------------------------------------------
+//  Filters/Cards
+// -------------------------------------------*/
+.hero-container .filters {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include screen-sm-min {
+        flex-direction: row;
+        
+        &>div {
+            flex:1;
+        }
+    }
+
+}
+.filter {
+    @include screen-md {
+        margin-bottom: $spacing-md;
+        // Create '$filter-y-spacing' variable.
+    }
+    @include screen-md {
+        padding-left: $spacing-base;
+        padding-right: $spacing-base;
+    }
+    position: relative;
+    min-height: $filter-height;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: $filter-border;
+    box-shadow: $filter-box-shadow;
+    padding: $filter-padding;
+    background: black;
+}
+
+.filter-header,
+.filter-footer,
+.filter-content {
+    min-width: 100%;
+    text-align: center;
+}
+
+.filter-header {
+    padding: $filter-header-padding;
+    margin-bottom: $spacing-base;
+}
+
+.filter-footer {
+    padding: $filter-footer-padding;
+}
+
+.filter-title {
+    @include font-size($font-size-base);
+    font-weight: bold;
+    margin: 0;
+}
+
+.filter-desc {
+    margin: ($spacing-base / 2) 0 0;
+}
+
+.filter-label,
+.filter-label-inline {
+    @include font-size($font-size-sm);
+    font-weight: normal;
+}
+
+.filter-label {
+    margin-bottom: ($spacing-xs / 2);
+    text-align: left;
+}
+
+.filter-label-inline {
+    margin-top: -$spacing-base;
+}
+
+.filter-content {
+    @include screen-sm {
+        // flex-flow: wrap column;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    justify-content: center;
+}
+
+.filter-text {
+    display: inline-block;
+    padding-left: $spacing-base;
+    padding-right: $spacing-base;
+    align-self: flex-end;
+}
+
+.filter-price-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-price-item {
+    text-align: left;
+    // margin-top: -$spacing-base;
+    padding-right: 4px;
+    &:first-of-type {
+        padding-left: 0;
+    }
+}
+
+.filter-price {
+    @include font-size($filter-price-base);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    sup {
+        top: $filter-sub-position;
+    }
+}
+
+.filter-icons {
+    min-height: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-icon {
+    margin-right: $filter-icon-spacing;
+    width: $filter-icon-size;
+    height: $filter-icon-size;
+    display: inline-block;
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.filter-icon-img {
+    width: 100%;
+    height: auto;
+}
+
+.filter-terms {
+    font-size: 10px;
+    margin: -1em 0 0;
+    min-height: 17px;
+}
+
+.filter-terms {
+    .node-type-city-state-page & {
+        $filter-term-spacing: 0.1875em; // 3px;
+        @include font-size($font-size-xs);
+        margin-bottom: 0;
+        &:last-of-type {
+            margin-bottom: $spacing-md;
+        }
+    }
+}
+
+.filter-feature-highlight {
+    @include font-size($font-size-md);
+    margin: 0;
+}
+
+.filter-feature-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .filter-feature {
+        @include screen-md {
+            padding: $spacing-xs ($spacing-xs / 2) 0;
+        }
+        @include screen-xs {
+            padding: $spacing-xs $spacing-base 0;
+        }
+        padding: $spacing-xs $spacing-base 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 0 0 20%;
+        min-height: 140px;
+        text-align: center;
+    }
+}
+
+.filter-promoted {
+    margin-bottom: $spacing-md;
+    .filter-title {
+        @include screen-sm-min {
+            @include font-size($font-size-md);
+        }
+        @include font-size($font-size-base);
+    }
+    .promoted-location {
+        font-weight: normal;
+    }
+    .filter-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        // flex-flow: wrap row;
+        padding: $spacing-md 0;
+    }
+    .filter-header {
+        padding-top: $spacing-base;
+    }
+    .filter-footer {
+        padding-bottom: 0;
+        @include screen-md-min {
+            padding-top: $spacing-md;
+        }
+    }
+}
+
+/* -------------------------------------------
+//  Drupal overrides on Filters
+// -------------------------------------------*/
+
+.field-collection-view-links {
+    display: none;
+}

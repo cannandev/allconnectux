@@ -1,0 +1,375 @@
+/**
+ * ACDC Search Results Styles.
+ */
+ //
+ // This stylesheet is used to override the current ACDC CSS
+ // Please update this later for optimal maintenance and performance.
+ // AD
+ //
+
+ // Local variables.
+ //
+ // Only adding local variables because this is really unique
+ // and wont be used anywhere else. For now :)
+ //
+ $bundle-row-height: 7.5em;
+ $result-item-border-radius: 3px;
+ $start-price-width: 11.25em; //180px.
+ $start-price-spacing: 0.125em; // 2px.
+ $acdc-screen-sm: 640px;
+
+// End Variables
+
+ #resultscontainer {
+  &.container {
+    @include screen-sm {
+      padding: 0;
+    }
+    min-height: 50px;
+    border: 2px solid $border-light;
+    display: block;
+    padding: $spacing-xs;
+
+    @media only screen and(max-width: $acdc-screen-sm) {
+      margin: $spacing-base 0 0;
+      width: 100% !important; //Bad :(
+    }
+  }
+ }
+
+ #displayProducts .left_blk, #displayProducts .middle_blk, #displayProducts .right_blk, #displayProducts .last_blk {
+  @include screen-xs {
+    flex-direction: column;
+  }
+  @include screen-sm-min {
+    // height: $bundle-row-height;
+  }
+  display: flex;
+  // flex-flow: wrap column;
+  flex-direction: column;
+  position: relative !important;
+ }
+
+ #displayProducts .middle_blk,
+ #displayProducts .right_blk,
+ #displayProducts .last_blk {
+  @include screen-sm {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  @include screen-md {
+    max-width: 100%;
+    width: auto;
+  }
+ }
+
+#displayProducts .left_blk {
+  width: auto;
+  padding: 0;
+}
+
+#displayProducts .middle_blk {
+  flex: 1;
+  justify-content: space-around;
+  // flex-flow: wrap column;
+  flex-direction: column;
+  padding: 0;
+  width: auto;
+}
+
+#displayProducts .right_blk {
+    flex: 0 0 $start-price-width;
+    // flex-flow: nowrap row;
+    flex-direction: row;
+    max-width: 100%;
+    width: auto;
+    min-height: $bundle-row-height;
+    margin: 0 $spacing-base;
+    padding: 0;
+    @include screen-sm {
+      margin: 0;
+      order: -1;
+      height: auto;
+      min-height: auto;
+      flex: 1;
+    }
+    @include screen-md-min {
+      margin: 0 $spacing-lg;
+    }
+}
+
+// Set
+  .right_blk #priceParagraph {
+      background: #43b4e4;
+      color: #fff;
+      height: 110px;
+      margin: 0;
+      padding: 10px 10px 0 10px;
+      width: 172px;
+  }
+
+.right_blk #priceParagraph {
+    @include font-size(33px);
+    background-color: $cta-primary !important;
+    border: 1px solid $cta-primary;
+    font-weight: bold;
+    color: $white !important; // Bad :(
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: auto;
+    position: relative;
+    @include screen-sm {
+      padding: 0;
+      border-top-left-radius: $result-item-border-radius;
+      border-top-right-radius: $result-item-border-radius;
+      width: 100%;
+      margin-bottom: ($spacing-xs / 2);
+    }
+
+    @media only screen and(max-width: $acdc-screen-sm) {
+      text-align: center;
+    }
+}
+
+#priceParagraph span.content {
+  @include font-size(13px);
+}
+
+#priceParagraph {
+  span {
+    &:nth-of-type(2) {
+      span {
+        span {
+          margin-left: $start-price-spacing;
+        }
+      }
+    }
+    .super {
+      font-weight: bold;
+      margin-top: 0.375em //6px;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .right_blk #priceParagraph span.super {
+      position: absolute;
+  }
+}
+
+
+#displayProducts .last_blk {
+  @include screen-md {
+    justify-content: center;
+  }
+  @include screen-sm {
+    padding: $spacing-md 0;
+  }
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 100%;
+  width: auto;
+  min-height: auto;
+  padding: 0;
+}
+
+.last_blk .merchSelectbtn,
+.last_blk #phoneNumberForOrder,
+#comparebtnDown, .comparebtn {
+  @include screen-md-min {
+    @include font-size($font-size-md);
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  @include font-size($font-size-base);
+  color: $white;
+  line-height: normal;
+  width: auto;
+  height: auto;
+  border-radius: $btn-border-radius;
+  margin-top: 0;
+  box-shadow: none;
+  border-radius: $btn-border-radius;
+  background: $btn-primary-bg;
+  border-color: $btn-primary-bg;
+  padding: $btn-padding-default;
+  &:hover {
+    background-color: $btn-primary-bg-hover;
+    border-color: $btn-primary-bg-hover;
+  }
+}
+
+.last_blk .phoneOnlyCTA > span,
+.phoneOnlyCTA span, 
+.phoneOnlyCTAMoreDetails span
+{
+  color: $white;
+}
+
+.last_blk .phoneOnlyCTA {
+  color: inherit;
+  display: inline-block;
+  position: static;
+}
+
+.compareBtnDiv {
+  @include screen-md {
+    display: none;
+    visibility: hidden;
+  }
+  margin-left: -$spacing-base;
+  margin-right: -$spacing-base;
+}
+
+#comparebtnDown, .comparebtn {
+  text-shadow: none;
+}
+
+
+.comparebox {
+  @include screen-md {
+    display: none;
+    visibility: hidden;
+  }
+  font-weight: normal;
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  label {
+    font-weight: normal;
+  }
+}
+
+ #wrapper #Container > .container {
+  min-height: auto;
+ }
+
+ #displayProducts .container .row {
+  @include screen-sm-min {
+    // flex-flow: wrap row;
+    flex-direction: row;
+    align-content: space-between;
+  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media only screen and(max-width: $acdc-screen-sm) {
+    padding: 0;
+  }
+ }
+
+ .middle_blk .recordTitle,
+ .middle_blk .RecordTitle {
+  @include screen-sm {
+    float: none;
+    margin-top: $spacing-base;
+    max-width: 100%;
+  }
+ }
+
+ h2.RecordName, .RecordNameEG a {
+  @include font-size(17px);
+  padding-top: 0;
+}
+
+.RecordName a, .RecordName a:hover {
+  color: $brand-primary;
+}
+
+.RecordDescription {
+  @include font-size($font-size-sm);
+  display: block !important;
+}
+
+.moreid {
+  margin-top: ($spacing-xs / 2);
+  display: flex;
+  // flex-flow: wrap column;
+  flex-direction: column;
+  width: 100%;
+  a {
+    @include screen-sm {
+      justify-content: center;
+      text-align: center;
+    }
+    display: flex;
+    align-items: center;
+  }
+  @media (min-width: 1180px) {
+    margin-left: 0;
+  }
+}
+
+//
+// TODO
+//
+// => ad: No more styling IDs. This is a no no.
+// => ca: This will all be thrown out with the new results page. Thankfully.
+#moreDetailslink {
+  @media only screen and(max-width: $acdc-screen-sm) {
+    padding: 0;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1180px) {
+  .middle_blk .viewChannelLineUp {
+      position: relative;
+  }
+}
+
+.viewChannelLineUp {
+  @include screen-sm {
+    display: none;
+    visibility: hidden;
+  }
+  display: flex;
+  justify-content: flex-end;
+}
+
+.resultsChannelLink{
+  @include screen-md {
+    display: none;
+    visibility: hidden;
+  }
+  background: #fff url("https://www.allconnect.com/common/images/channel-lineup.png") no-repeat
+   scroll 5px center;
+  // Remove in production.
+  margin-left: 0;
+}
+
+.resultsChannelLink_mb {
+    float: none;
+}
+
+
+@media only screen and (max-width: 1180px) and (min-width: 641px) {
+  .middle_blk .viewChannelLineUp {
+    left: 0;
+    position: relative;
+  }
+
+  #displayProducts .right_blk {
+    // flex: 0 0 21%;
+    // flex-wrap: wrap;
+  }
+  .right_blk #priceParagraph span.content {
+      @include screen-sm {
+        display: none;
+        visibility: hidden;
+      }
+      @include font-size(13px);
+      display: flex;
+      font-weight: inherit;
+      line-height: normal;
+      position: relative;
+      height: auto;
+      margin: inherit;
+      padding: 0;
+      // width: auto;
+  }
+}

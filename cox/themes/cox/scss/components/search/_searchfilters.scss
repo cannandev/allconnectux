@@ -1,0 +1,29 @@
+.results-container {
+    #filterContainer { //Actual Filters
+        .filters {
+            .GuidedNavigationTitle {   
+                a {
+                    color:$brand-secondary;
+                }
+            }
+            .filters-wrap {
+                .filter-row {
+                    .filter-title {
+                        background-color:$gray-light;
+                    }
+                    .filter-box {
+                        border-color:$gray-light;
+                        .DimensionValue {
+                            input, label {
+                                float:none;
+                            }
+                            input[type=checkbox]:checked + label {
+                                color:$brand-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

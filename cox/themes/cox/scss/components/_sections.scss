@@ -1,0 +1,18 @@
+//## Sections.
+.section-hr {
+  border-bottom: $border-width-base solid $border-light;
+}
+
+.section-hr-white {
+  border-top: $border-width-base solid $white;
+}
+
+/*=============================================
+=            Frontpage            =
+=============================================*/
+
+.brand-value {
+  @include screen-md {
+    border-bottom: 1px solid $gray-light;
+  }
+}

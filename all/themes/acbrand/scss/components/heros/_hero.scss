@@ -1,0 +1,29 @@
+/* ----------------------------------------------------------
+//  Hero section
+// ---------------------------------------------------------- */
+
+.hero {
+  padding: $spacing-lg 0;
+}
+
+.hero-header {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+}
+
+.hero-headline {
+  margin-bottom: ($spacing-xs / 2);
+}
+
+.hero-headline__filter.headline-base {
+  margin-bottom: ($spacing-lg / 2);
+  text-align: center;
+}
+
+.hero-subhead {
+  @include font-size($font-size-md);
+}
+
+.hero-btn-block {
+  margin: 0;
+}

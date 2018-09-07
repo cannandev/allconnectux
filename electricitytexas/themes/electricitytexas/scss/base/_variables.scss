@@ -1,0 +1,95 @@
+// ==========================================================================
+// Fonts.
+// ==========================================================================
+
+$font-default: "Open Sans", Helvetica, Arial, sans-serif;
+
+// ==========================================================================
+// Basic colors.
+// ==========================================================================
+
+$white:                   #fff;
+$black:                   #000;
+$gray:                    #5A5A5A;
+$gray-light:              darken($white, 8%);
+
+ 
+// DO NOT ADD MORE BASIC COLORS. USE SASS lighten() OR darken() FUNCTIONS
+// IN YOUR CODE. SEE http://sasstoolkit.com
+// OR CREATE A NEW SEMANTIC VARIABLE BELOW.
+
+
+// ==========================================================================
+// Branded color map.
+// ==========================================================================
+
+// Actions.
+$cta-primary:             #5bb07a;           // 1) Primary CTA Color
+$cta-secondary:           #3c6792;      // 2) Secondary CTA light on dark
+$cta-secondary-dark:      #507ea4;           // 3) Secondary CTA dark on light
+
+
+// Headlines.
+$hl-primary-color:          #3c6792;       // 4) h1 Heading Color
+$hl-secondary-color:        $black;        // 5) Headings (h2-h5), headline color
+
+
+// Navbar Links.
+$nav-link-color:            #3c6792;  // 6) Top Nav Links Color
+
+
+// Highlights.
+$highlight-primary:         #9d3304;    // 7) Primary Highlight Color
+$highlight-secondary:       #9d3304;    // 8) Secondary Highlight Color
+
+
+// Link colors.
+$link-color:                #3c6792;       // default link color within content
+$link-color-hover:          #507ea4;
+
+// ==========================================================================
+// Other site colors.
+// ==========================================================================
+
+// Body colors.
+$body-font-color:           $black;
+$body-bg-color:             $white;
+
+
+// Mobile nav.
+$navbar-link-bg-hover:      $nav-link-color;
+$navbar-link-border-color:  $gray-light;
+$navbar-link-hover:         $white;
+$navbar-toggle-color:       $nav-link-color;  // mobile toggle
+
+
+// Cart.
+$cart-badge-font-color:     $cta-secondary;
+
+
+// Buttons.
+$btn-border-radius:         6px;
+$btn-primary-bg:            $cta-primary;
+
+
+// Filters.
+$filter-body-font-color:    $black;
+$filter-bg-color:           $white;
+$filter-price-color:        $cta-secondary;
+
+
+// Border colors.
+$border-medium:            lighten($gray, 40%);
+$border-light:             darken($white, 8%);
+$border-default:           rgba($white, .5);
+
+// Search.
+
+// Callback Checkout.
+$checkout-label-color:     lighten($gray, 28%);
+
+// ==========================================================================
+// Math.
+// ==========================================================================
+$num-results-heros: 9;
+

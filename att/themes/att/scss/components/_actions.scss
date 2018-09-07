@@ -1,0 +1,35 @@
+/* ----------------------------------------------------------
+//  Actions
+// ---------------------------------------------------------- */
+.cta-banner {
+  background-color: $cta-primary;
+  color: $white;
+  a {
+    color: inherit;
+  }
+  display: flex;
+  justify-content: center;  
+}
+
+
+
+// ==========================================================================
+// Buttons.
+// ==========================================================================
+.btn {
+  border-radius: $btn-border-radius;
+}
+
+.btn-primary {
+  background-color: $btn-primary-bg;
+  border-color: $btn-primary-bg;
+  color: $white;
+  &:hover, 
+  &:focus {
+    background-color: transparent;
+    border-color: lighten($btn-primary-bg, 20%);
+    color: $btn-primary-bg;
+  }
+  // Probably should create a button mixin for DRY code
+}
+

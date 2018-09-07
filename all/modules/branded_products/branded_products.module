@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Branded Products feature.
+ */
+
+include_once 'branded_products.features.inc';

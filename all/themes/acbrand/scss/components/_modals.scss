@@ -1,0 +1,15 @@
+/* -------------------------------------------
+//  Modals
+// -------------------------------------------*/
+
+.modal-footer {
+    border-top: 0;
+    text-align: center;
+}
+
+.modal-header {
+    .close {
+        font-weight: normal;
+        margin-top: -$spacing-xs;
+    }
+}

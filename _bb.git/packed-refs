@@ -1,0 +1,25 @@
+# pack-refs with: peeled fully-peeled sorted 
+30e1d0af2e8ab73067529f800f647e8f9a939ad3 refs/remotes/origin/acnew-Drupal
+f816ff418ff2735742244980fa35875271fb0f74 refs/remotes/origin/bug-fix/att-gtm
+1d4a97f41a3533d0b0be3280852a4d7d5d67c55b refs/remotes/origin/bug/DEQ-475_Fix_xfinity_promo_color
+ccf526794ee2493f68b76449906e9095914ac0d3 refs/remotes/origin/bug/att-color-theme
+b3a074363faedf4aa2be2d9225f290b58bcf791c refs/remotes/origin/bug/hero-mobile-fix
+657967627ce3169c9cb00b68a3184dc79af5841e refs/remotes/origin/bug/txue-tablet-filter
+d1a9059abf3ca18796a47eedbb469fe59c23eb4b refs/remotes/origin/develop
+696c3a896fe0ba9399d5efb4d6899d175332dd85 refs/remotes/origin/feature/att-brand
+2e3e3647460116255a80590b705de1c029849355 refs/remotes/origin/feature/brand-template-improvements
+b54f4a506279ad0eeff12ccba5414941ce45fb78 refs/remotes/origin/feature/json-data
+2fec7104a6729327f6a022764af7e362142b3327 refs/remotes/origin/feature/new-ac-theme
+892dd75caa1de587906d88b9212492df5b0e77a5 refs/remotes/origin/feature/txue-branded
+af6fd74986dd0a8666d6b00b751e0cab3ca8eb05 refs/remotes/origin/features/allconnect-new-w-results
+db8815efc188569bb7d0a98365f0f978920f13e2 refs/remotes/origin/features/call-in-overlay
+647be3e23c50e5706fa030bb6fc93e54007c720a refs/remotes/origin/features/single-tile-drupal
+589d8dfe040acfe6177d1ee840f7b9965959e6a9 refs/remotes/origin/master
+218c5eb189e31e1c92cf60aa59d58eb7c77e5dba refs/tags/Contract_term_fix
+^b74373bffd2735e8dcd7451ceda0513099588db8
+10aa4df8e97021d197c2f4645c4eb863280207bb refs/tags/btn_padding
+^b516ce32f4899d17429d97d8d37dfc6bf15d976e
+464e1f1b1d71bee7cb9c7d433b46a2a87a4f71ed refs/tags/plan_details_bug
+^87c50a988434dea97bd1ee733e7687d37e49430d
+4796f2c9c5bc5429d7d65ea8d4663fb300ef48be refs/tags/remove_cox_specific_styles
+^ce71457f80b700c81440e6a528b72e5668cc1320

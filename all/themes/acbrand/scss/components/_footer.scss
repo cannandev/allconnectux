@@ -1,0 +1,49 @@
+/* -------------------------------------------
+//  Footer
+// -------------------------------------------*/
+
+.footer-section {
+    padding: $footer-section-padding;
+}
+
+.test-footer {
+    background: black;
+}
+
+.footer-navbar,
+.footer-section {
+    text-align: center;
+}
+
+.footer-navbar {
+    position: relative;
+    padding: $spacing-xl 0;
+}
+
+.footer-logos {
+    .flex-container {
+        justify-content: center;
+    }
+    .flex-item {
+        padding-left: $spacing-base;
+        padding-right: $spacing-base;
+        display: inline-block;
+        @include screen-sm {
+            padding-top: $spacing-base;
+            padding-bottom: $spacing-base;
+            // Add top and bottom padding on small viewports to prevent collision.
+        }
+    }
+    .footer-logo {
+        img {
+            width: $footer-logo-size;
+            height: auto;
+        }
+    }
+}
+
+.footer-copyright {
+    @include font-size($font-size-sm);
+    margin-bottom: 0;
+    padding: $spacing-base 0;
+}

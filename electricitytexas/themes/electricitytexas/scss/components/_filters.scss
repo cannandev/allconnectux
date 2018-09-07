@@ -1,0 +1,82 @@
+//** Filters.
+.filter {
+  color: $filter-body-font-color;
+  background-color: $filter-bg-color;
+  border-color: $cta-primary;
+  border-radius: 3px;
+  min-height: 324px;
+  padding: 0 2em;
+  .btn-view-offers {
+    font-weight: normal;
+  }
+  @include screen-sm-to-md {
+    padding: 0 1em;
+  }  
+}
+
+.filter-header {
+  border-bottom: $border-width-base solid $border-light;
+}
+
+.filter-price {
+  color: $filter-price-color;
+  font-size: $font-size-lg;
+  font-weight: normal;
+  @include screen-sm-to-md {
+    font-size: $font-size-md;
+  }
+  div {
+    border: 0;  // drupal field_collection_item override
+  }
+}
+
+.filter-label,
+.filter-label-inline {
+  color: #999;
+}
+
+.filter-feature-group {
+  .filter-feature {
+    &:not(:last-of-type) {
+      border-right: $border-width-base solid $border-light;
+    }
+  }
+}
+
+.filter-promoted {
+  .filter-footer {
+    @include screen-sm-min {
+      border-top: $border-width-base solid $border-light;
+    }
+  }
+}
+
+.filters-disclaimer {
+  color: $highlight-primary;
+  margin-top: $spacing-sm;
+  .node-type-results-page & {
+    font-size: $font-size-sm;
+    font-weight: bold;
+    @include screen-sm {
+      text-align: center;
+    }
+  }
+}
+
+// Overrides
+
+.filter-title {
+  font-size: $font-size-xs * 2;
+  font-weight: normal;
+  @include screen-sm-to-md {
+    font-size: $font-size-md;
+  }
+}
+
+.filter-desc {
+  margin: $spacing-xs 0;
+}
+
+.filter-header {
+  border-bottom-width: 1px;
+}

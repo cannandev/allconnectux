@@ -1,0 +1,165 @@
+/* -------------------------------------------
+//  Header
+// -------------------------------------------*/
+
+.site-header {
+    width: 100%;
+    position: relative;
+    display: block;
+    .container,
+    .container-fluid {
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .navbar-toggle {
+        @include font-size($navbar-toggle-size);
+        .icon-bar {
+            height: 4px;
+        }
+    }
+    .navbar-extras {
+        a {
+            display: inline-block;
+            padding: 1em;
+        }
+    }
+}
+
+// CTA Banner Component
+@import "header/cta-banner/cta-banner";
+
+// Custom navbar settings.
+.navbar {
+    min-height: $navbar-height;
+    display: flex;
+    align-items: center;
+
+    .flex-nav {
+      // text-align: center;
+      @include screen-md {
+        text-align: center;
+        li {
+          a {
+            padding: $navbar-link-padding-m;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    a {
+        font-weight: bold;
+        &:hover {
+            color: inherit;
+        }
+        // All links in Navbar are bold.
+    }
+    .order-status {
+        a {
+            padding-right: $spacing-base;
+        }
+    }
+    @include screen-md {
+        .nav-primary {
+            li {
+                display: block;
+                a {
+                    display: block;
+                }
+            }
+        }
+
+        // Hack to override default bootstrap collapse menu
+        // Not pretty but it works. (AD)
+        .collapse {
+            display: none !important;
+        }
+        .collapse.in{
+             display:block !important;
+         }
+         // End
+    }
+    .navbar-container {
+        @include screen-md-min {
+            display: flex;
+        }
+        @include screen-md {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+            flex-flow: column;
+        }
+    }
+    .navbar-toggle {
+        @include screen-md {
+            display: block;
+        }
+    }
+    .navbar-collapse {
+        // Leverage flexbox only on viewports with a min width of 960px.
+        padding: 0;
+        @include screen-md-min {
+            display: flex !important;
+            flex: 1;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        @include screen-md {
+            // padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.navbar-header {
+    display: flex;
+    @include screen-md {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+
+.navbar-brand {
+    height: auto;
+    padding: $spacing-base; // Add clearspace around logo
+    @include screen-md {
+        flex: 1;
+        margin-left: 0 !important;
+    }
+}
+
+.navbar-brand-img {
+    max-width: $brand-img-size;
+}
+
+
+// Remove left and right padding
+.navbar-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    &:hover {
+        background-color: none;
+        // Remove bootstrap default hover color.
+    }
+    .badge {
+        @include font-size($font-size-base);
+        background: none;
+        border: 1px solid;
+        // margin: 0 $nb-nav-padding-x;
+        font-weight: bold;
+        color: inherit;
+        border-radius: 50%;
+    }
+    .cart-icon {
+        width: 32px;
+    }
+}

@@ -1,0 +1,19 @@
+//**Footer Styles
+.footer-navbar-light {
+  background-color: $white;
+  a {
+    color: $nav-link-color;
+  }
+}
+
+.footer-navbar-dark {
+  background-color: lighten($black, 14%);
+  color: $white;
+  a {
+    color: $white;
+  }
+}
+
+.footer-nav-primary {
+  color: $link-color;
+}

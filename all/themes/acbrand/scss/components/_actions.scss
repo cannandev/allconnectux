@@ -1,0 +1,99 @@
+/* -------------------------------------------
+//  Actions
+// -------------------------------------------*/
+a {
+    text-decoration: none;
+    &:not(.btn) {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.cta-banner {
+    .banner-title {
+        @include font-size(18px);
+        margin: 0;
+        font-weight: normal;
+    }
+    .banner-phone {
+        @include font-size($font-size-md);
+        font-weight: bold;
+    }
+    .flex-container {
+        // justify-content: center;
+        margin: 0;
+    }
+    .flex-item {
+        padding-left: $spacing-base;
+        padding-left: $spacing-base;
+    }
+    p {
+        margin-bottom: 0; // Overrides p tags inserted into Drupal blocks.
+    }
+}
+
+.cta-banner,
+.header-cta-banner {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-md;
+}
+
+.cta-banner__container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  @include screen-xxs {
+    justify-content: center;
+  }
+}
+
+.cta-banner__telgroup {
+    display: flex;
+    align-items: center;
+    margin:0 auto;
+    @include screen-sm {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        .flex-item {
+            padding-left: 0;
+        }
+    }
+}
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+.btn {
+    padding: $btn-padding-default;
+    &:not(.btn-link) {
+        font-weight: bold;
+    }
+}
+
+.btn-primary[disabled], 
+.btn-primary[disabled]:hover {
+    background-color: $medium-grey;
+    color: $white;
+    border: 0;
+}
+
+.btn-primary[disabled]:hover {
+    text-decoration: underline;
+}
+
+.btn-icon {
+    margin-right: ($spacing-xs / 2);
+}
+
+// ==========================================================================
+// CTA Phone numbers
+// ==========================================================================
+.acdc_provider_phone_no {
+    @include screen-sm-min {
+        cursor: text;
+    }
+}

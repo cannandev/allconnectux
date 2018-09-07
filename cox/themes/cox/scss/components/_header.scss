@@ -1,0 +1,43 @@
+//** Brand specific header styles.
+
+.site-header {
+  .navbar-toggle {
+    color: $navbar-toggle-color;
+    a {
+      color: inherit;
+    }
+  }
+}
+
+// CTA Banner Component
+@import "header/cta-banner/cta-banner";
+
+.navbar {
+  .flex-nav {
+    @include screen-md {
+      a {
+        font-weight: normal;
+      }
+      li {
+        a {
+          border-top: 1px solid $navbar-link-border-color;
+          &:focus,
+          &:active {
+            background-color: $navbar-link-bg-hover;
+            border-top-color: $navbar-link-bg-hover;
+            color: $navbar-link-hover;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-cart {
+    .badge {
+        border-color: $brand-secondary;
+        color: $cart-badge-font-color;
+    }
+}
+

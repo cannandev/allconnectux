@@ -1,0 +1,75 @@
+/* ----------------------------------------------------------
+//  Hero section
+// ---------------------------------------------------------- */
+
+.hero {
+  background-image: linear-gradient(0deg, #D1D3D4 0%, #F6F6F6 64%, #D1D3D4 100%);
+}
+
+/* ----------------------------------------------------------
+//  Hero with images
+// ---------------------------------------------------------- */
+
+.hero-image {
+	background-color: $black;
+}
+
+.hero-image-headline__title, 
+.hero-image-headline__subhead {
+	color: $hl-primary-color;
+}
+
+.hero-image-cta {
+	border-color: $border-light;
+	border-color: $border-default;
+}
+
+.hero-image-cta__telgroup {
+	a {
+		color: $white;
+	}
+}
+
+.hero-image-cta__title {
+	color: $gray;
+}
+
+.hero-image-cta__divider {
+	color: $gray; 
+}
+
+/* ----------------------------------------------------------
+//  Hero for Landing Pages
+// ---------------------------------------------------------- */
+
+.hero-product__price {
+	background-color: $brand-secondary;
+	color: $white;
+	&:after {
+		border-color: transparent;
+		border-left-color: $brand-secondary;	
+	}
+
+	.filter-price,
+	.filter-label, 
+	.filter-label-inline {
+		color: $white;
+	}
+}
+
+.hero-product__features {
+	h4 {
+		color: $white;
+	}
+	ul {
+		color: $gray-light;
+	}
+}
+
+.hero-promo__text {
+	color: $white;
+}
+
+.hero-cta {
+	color: $white;
+}

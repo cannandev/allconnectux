@@ -1,0 +1,69 @@
+/* ----------------------------------------------------------
+//  Hero with images
+// ---------------------------------------------------------- */
+
+.hero-image {
+	position: relative;
+	overflow: hidden;
+
+	@include screen-sm-min {
+		padding: $spacing-xs 0;
+	}
+	@include screen-md-min {
+		height: $hero-height-md;
+	}
+	@include screen-lg-min {
+		height: 28em;
+	}
+
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+		height: 100%;	
+	}
+
+}
+
+.hero-image-embed {
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0 auto;
+		width: 100%;
+		height: auto;
+		@include screen-sm-min {
+			width: auto;
+			height: 100%; 
+		}
+		@include screen-lg-min {
+			right: 0;
+		}
+		@include z-index(hero-image);
+	}
+}
+
+.hero-image-header {
+	margin-bottom: 0;
+	text-align: center;
+	height: 100%;
+}
+
+.hero-image-content { 				// flex container
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	align-items: center; 				// needed for safari
+	padding: 1.75em 0 1em;
+	position: relative;
+	margin: 0 auto;
+	@include z-index(hero-image-content);
+	@include screen-sm-min {
+		max-width: 330px;		
+		height: 100%;
+		justify-content: space-around;
+		padding: 0;
+		margin-right: 0;
+		min-height: inherit;
+	}
+}

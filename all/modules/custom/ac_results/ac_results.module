@@ -1,0 +1,210 @@
+<?php
+
+/**
+ * @file
+ * Results page and blocks for Branded sites.
+ */
+
+
+/**
+ * Implements hook_menu().
+ */
+function ac_results_menu() {
+
+  $items['ac-results.html'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Products'),
+    'description' => 'Results page for Branded sites',
+    'page callback' => 'ac_results_page',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+
+  $items['cb-checkout/step-1'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('AC Callback Checkout'),
+    'description' => 'Callback Checkout page for Branded sites',
+    'page callback' => 'ac_results_page',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  ); 
+
+  $items['cb-checkout/step-2'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('AC Callback Confirmation'),
+    'description' => 'Callback Confirmation page for Branded sites',
+    'page callback' => 'ac_results_page',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback. Uses theme template for markup.
+ * 
+ * @see page--ac-results.tpl.php
+ */
+function ac_results_page() {
+  $content = '';
+
+  return $content;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function ac_results_block_info() {
+  $blocks['phone_popup'] = array(
+    // The name that will appear in the block list.
+    'info' => t('Phone Number Popup'),
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+    'status' => 1,
+    'region' => 'footer_corporate',
+    'weight' => 10,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ac_results_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'phone_popup':
+      $block['subject'] = t('Phone Number Popup');
+
+      if (user_access('access content')) {
+        if (variable_get('phone_popup_enabled')) {
+          $block['content'] = array(
+            '#markup' => variable_get('phone_popup_content'),
+            '#attached' => array(
+              'js' => array(
+                array(
+                  'data' => drupal_get_path('theme', 'acbrand') . '/js/widgets/popup.js',
+                  'weight' => 10,
+                  'group' => JS_THEME,
+                  'scope' => 'footer',
+                ),
+                array(
+                  'type' => 'setting',
+                  'data' => array('popupTimer' => variable_get('phone_popup_timer')),
+                  'weight' => 10,
+                ),
+              ),
+            ),
+          );
+        }
+        else {
+          $block['content'] = array();
+        }
+
+        $block['callout'] = variable_get('phone_popup_callout');
+        $block['phone_label'] = variable_get('phone_popup_phone_label');
+        $block['phone'] = variable_get('phone_popup_phone');        
+
+      }
+      break;    
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function ac_results_block_configure($delta = '') {
+  $form = array();
+
+  if ($delta == 'phone_popup') {
+    $form['phone_popup_enabled'] = array(
+      '#type' => 'select',
+      '#title' => t('Popup enabled'),
+      '#options' => array(
+        0 => t('No'),
+        1 => t('Yes'),
+       ),
+      '#default_value' => variable_get('phone_popup_enabled'),
+      '#weight' => -20,
+    );
+
+    $form['phone_popup_timer'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Timer (number of seconds)'),
+      '#default_value' => variable_get('phone_popup_timer'),
+      '#size' => 10,
+      '#weight' => -10,
+    );
+
+    $form['title'] = array(     // Use drupal block title field 
+      '#type' => 'textfield',
+      '#title' => t('Minimized Callout Text'),
+      '#default_value' => variable_get('phone_popup_callout_min'),      
+      '#description' => t('Recommended limit of 24 characters'),
+    );    
+
+    $form['phone_popup_callout'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Callout Text'),
+      '#default_value' => variable_get('phone_popup_callout'),
+    );
+
+    $form['phone_popup_content'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Value Text'),
+      '#default_value' => variable_get('phone_popup_content'),
+      '#rows' => 3,
+      '#resizable' => FALSE,
+    );
+
+    $form['phone_popup_phone_label'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Phone Number Label'),
+      '#default_value' => variable_get('phone_popup_phone_label'),
+    );
+
+    $form['phone_popup_phone'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Phone Number'),
+      '#description' => t('Different from site number'),
+      '#default_value' => variable_get('phone_popup_phone'),
+    );
+
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ * 
+ * @param $edit: The submitted form data from the configuration form.
+ */
+function ac_results_block_save($delta = '', $edit = array()) {
+  if ($delta == 'phone_popup') {
+    variable_set('phone_popup_callout_min', $edit['title']);
+    variable_set('phone_popup_enabled', $edit['phone_popup_enabled']);
+    variable_set('phone_popup_timer', $edit['phone_popup_timer']);
+    variable_set('phone_popup_callout', $edit['phone_popup_callout']);
+    variable_set('phone_popup_content', $edit['phone_popup_content']);
+    variable_set('phone_popup_phone_label', $edit['phone_popup_phone_label']);
+    variable_set('phone_popup_phone', $edit['phone_popup_phone']);
+  }
+}
+
+/**
+ * Implements hook_form_alter(). Hides visibility and region settings.
+ */
+function ac_results_form_alter(&$form, &$form_state, $form_id){
+    global $user;
+    if($form_id == 'block_admin_configure'){
+      // dsm($form, 'form');
+        if(in_array('block editor', $user->roles)){
+            hide($form['regions']);
+            hide($form['visibility']); //for the visibility region
+            hide($form['visibility_title']); //for the visibility region
+        }
+    }
+}

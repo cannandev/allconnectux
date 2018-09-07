@@ -1,0 +1,7 @@
+// Mixins
+// --------------------------------------------------
+
+// Convert pixels to ems
+.px2em( @target, @context: 16 ) {
+  font-size: (@target / @context) + 0em;
+}

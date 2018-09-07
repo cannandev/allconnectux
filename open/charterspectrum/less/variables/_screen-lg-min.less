@@ -1,0 +1,44 @@
+/* Media queries for Large devices - Desktops (≥1200px), 
+ * Bootstrap variable @screen-lg-min
+ * Container width 1170px */
+
+@media (min-width: @screen-lg-min) { 
+
+	.bar {
+		font-size:28px;
+	}
+
+	.main-nav {
+		& > .container {
+			//width: 950px;
+		}
+	}
+
+	.hero {
+		.hero-container {
+			background-image: url('../images/hero_img_3200.jpg');
+			background-size:1600px auto;
+			height:501px;
+
+			.hero-text-wrap {
+				margin-right:55px;
+			}
+		}
+	}
+
+	.products {
+		width: 1075px;
+	}
+
+	.product {
+		max-width: 310px;
+	}
+
+	.mid-tfn {
+		padding-top: 3.5em;
+		h1 {
+			.px2em(36);
+		}
+	}
+
+}

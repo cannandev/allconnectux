@@ -1,0 +1,14 @@
+/**
+ *
+ * Typography
+ *
+ */
+$defaultFont: 'Helvetica', 'Arial', sans-serif;
+.headline-base,
+.sub-heading-base {
+  color: $hl-secondary-color;
+}
+
+.text-primary {
+	color: $highlight-primary;
+}
