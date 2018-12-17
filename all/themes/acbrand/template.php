@@ -58,6 +58,11 @@ function acbrand_preprocess_page(&$vars, $hook) {
     ));     
   }
 
+  // Create alias for order page
+  if (module_exists('path') && (drupal_get_path_alias() == "ac-order.html")) {
+    $vars['theme_hook_suggestions'][] = 'page__acdc_order';  
+  }
+
   // Add custom template names for Callback Checkout pages
   if (module_exists('path') && (drupal_get_path_alias() == "cb-checkout/step-1")) {
     $vars['theme_hook_suggestions'][] = 'page__acdc_callback';
@@ -146,7 +151,7 @@ function acbrand_field_collection_view($variables) {
  *  Implements theme_menu_tree__MENUNAME()
  */
 function acbrand_menu_tree__menu_brand_links($variables) {
-  return '<ul class="footer-nav footer-nav-primary">' . $variables['tree'] . '</ul>';
+  return '<ul class="footer__nav footer-nav-primary">' . $variables['tree'] . '</ul>';
 }
 
 /**
@@ -154,7 +159,7 @@ function acbrand_menu_tree__menu_brand_links($variables) {
  *  Implements theme_menu_tree__MENUNAME()
  */
 function acbrand_menu_tree__menu_corporate_links($variables) {
-  return '<ul class="footer-nav">' . $variables['tree'] . '</ul>';
+  return '<ul class="footer__nav">' . $variables['tree'] . '</ul>';
 }
 
 /**
@@ -162,7 +167,7 @@ function acbrand_menu_tree__menu_corporate_links($variables) {
  *  Implements theme_menu_tree__MENUNAME()
  */
 function acbrand_menu_tree__menu_spanish_pages($variables) {
-  return '<ul class="footer-nav footer-nav-spanish">' . $variables['tree'] . '</ul>';
+  return '<ul class="footer__nav footer-nav-spanish">' . $variables['tree'] . '</ul>';
 }
 
 /**

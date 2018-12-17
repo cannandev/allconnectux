@@ -89,3 +89,23 @@
     flex: 0 0 80px;
     // Possibly make a variable out of this. May not be necessary though.
 }
+
+
+/* START - styles specifically used for tables in GEO PAGES */
+.field-collection-item table, 
+.field-collection-item tbody tr td, 
+.field-collection-item tbody tr th {
+    border: 1px solid #aaa;
+    text-align: left;
+    padding: 3px 3px;
+}
+
+.field-collection-item tbody tr th{
+text-align: center;
+}
+
+.field-collection-item table {
+    margin: 20px 0px;
+}
+
+/* END - styles specifically used for tables in GEO PAGES */

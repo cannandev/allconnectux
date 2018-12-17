@@ -20,6 +20,15 @@ function ac_results_menu() {
     'access arguments' => array('access content'),
   );
 
+  $items['ac-order.html'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Order'),
+    'description' => 'Used for Order Status, Checkout and other ACDC app pages',
+    'page callback' => 'ac_results_page',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+
   $items['cb-checkout/step-1'] = array(
     'type' => MENU_NORMAL_ITEM,
     'title' => t('AC Callback Checkout'),

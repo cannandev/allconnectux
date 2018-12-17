@@ -11,6 +11,31 @@
     }
 }
 
+.article {
+    padding: $spacing-lg;
+    margin-bottom: $spacing-sm;
+}
+
+.aside {
+    padding: $spacing-sm;
+    margin-bottom: $spacing-lg;
+    h3 {
+        border-bottom: 1px solid;
+        @include font-size($font-size-base);
+        font-weight: bold;
+        padding-bottom: $spacing-base;
+    }
+    ul {
+        padding-left: 0;
+        list-style-type: none;
+        margin: $spacing-xs 0 $spacing-xl;    
+    }
+    li {
+        margin-bottom: $spacing-xxs;
+    }
+
+}
+
 .brand-value {
     padding-top: $spacing-md;
     padding-bottom: $spacing-md;
@@ -31,22 +56,28 @@
         margin: 0 0 $spacing-sm 0;
     }
 
-    ul {
+    ul,ol {
         padding-left: $spacing-bs;
-        li {
-            line-height: $spacing-sm;
-            margin-bottom: $spacing-sm;
-        }
+    }
+
+    .list-unstyled {
+        padding-left: 0;
     }
 }
 
 .field-collection-item {
-    &:nth-child(odd) {
-        background-color: #f9f9f9;  // These colors remain standard through branded.
-    }
-    &:nth-child(even) {
-        background-color: #f3f3f3; 
-    }    
+    background-color: $white;   // This color remains standard through branded.
+    // &:nth-child(odd) {
+    //     background-color: #f9f9f9;  // These colors remain standard through branded.
+    // }
+    // &:nth-child(even) {
+    //     background-color: #f3f3f3; 
+    // }    
+}
+
+.body-content {
+    background-color: #f5f9fa;
+    padding: $spacing-lg 0;
 }
 
 

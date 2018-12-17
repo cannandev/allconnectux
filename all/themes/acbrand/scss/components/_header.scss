@@ -49,15 +49,15 @@
     }
 
     a {
-        font-weight: bold;
         &:hover {
             color: inherit;
         }
-        // All links in Navbar are bold.
     }
     .order-status {
         a {
             padding-right: $spacing-base;
+            font-weight: bold;
+            text-decoration: underline;
         }
     }
     @include screen-md {

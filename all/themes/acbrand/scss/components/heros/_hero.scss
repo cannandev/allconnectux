@@ -4,6 +4,9 @@
 
 .hero {
   padding: $spacing-lg 0;
+	@include screen-mobile {
+		padding-top: $spacing-lg - 2em;
+	}
 }
 
 .hero-header {

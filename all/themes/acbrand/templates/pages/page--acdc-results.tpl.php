@@ -1,7 +1,7 @@
 <?php 
 $params = drupal_get_query_parameters();
-$is_acdc = isset($params['isACDC']) ? TRUE : FALSE;
-$template = isset($params['category']) ? $params['category'] : 'bundles';
+$template = isset($params['category']) ? strtoupper($params['category']) : 'BUNDLES';
+$template_label = ucwords(strtolower($template));
 $otherProvidersNeeded = isset($params['otherProvidersNeeded']) ? $params['otherProvidersNeeded'] : FALSE;
 $providerName = isset($params['providerName']) ? $params['providerName'] : 'this provider';
 
@@ -17,33 +17,27 @@ $providerName = isset($params['providerName']) ? $params['providerName'] : 'this
 <!-- Header content -->
 
   <div id="header-wrapper">
-  <?php if (!$is_acdc): ?>
     <?php print render($page['header_codes']); ?>
-    <?php include_once path_to_theme() . '/templates/pages/includes/header/modals/address.inc'; ?>
+    <?php include_once drupal_get_path('theme', 'acbrand') . '/templates/pages/includes/header/modals/address.inc'; ?>
     <header class="site-header">
       <?php include_once path_to_theme() . '/templates/pages/includes/header/banners/cta-banner.inc'; ?>
-      <?php include_once path_to_theme() . '/templates/pages/includes/header/menus/main-menu.inc'; ?>
+      <?php include_once drupal_get_path('theme', 'acbrand') . '/templates/pages/includes/header/menus/main-menu.inc'; ?>
     </header>
-
-  <?php endif; ?>
   </div>
 
   <?php print $messages; ?>
   
   <!-- Main content -->
-        
   <?php print render($page['content']); ?>
   
   <?php include_once 'includes/search/content.inc'; ?>
 
   <!-- Footer content -->
 
-  <?php if (!$is_acdc): ?>    
-    <footer id="footer-wrapper" class="site-footer">
-      <?php include_once path_to_theme() . '/templates/pages/includes/footer/menus/brand-menu.inc'; ?>
-      <?php include_once path_to_theme() . '/templates/pages/includes/footer/banners/cta-banner.inc'; ?>
-      <?php include_once path_to_theme() . '/templates/pages/includes/footer/menus/logos.inc'; ?>
-      <?php include_once path_to_theme() . '/templates/pages/includes/footer/menus/corporate-menu.inc'; ?>
+    <footer id="footer-wrapper" class="footer">
+      <?php include_once drupal_get_path('theme', 'acbrand') . '/templates/pages/includes/footer/banners/cta-banner.inc'; ?>
+      <?php include_once drupal_get_path('theme', 'acbrand') . '/templates/pages/includes/footer/menus/corporate-menu.inc'; ?>
+      <script src="https://use.fontawesome.com/b25e7d562a.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </footer>
   
-  <?php endif; ?>

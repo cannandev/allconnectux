@@ -215,6 +215,12 @@
     }
 }
 
+.filters-wrapper__title {
+    padding-top: $spacing-sm;
+    text-align: center;
+    margin: 0;
+}
+
 /* -------------------------------------------
 //  Drupal overrides on Filters
 // -------------------------------------------*/

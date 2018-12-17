@@ -1,0 +1,223 @@
+/* ----------------------------------------------------------
+//  Plan results.
+// ---------------------------------------------------------- */
+.alert {
+  margin-top: $spacing-md;
+  margin-bottom: 0;
+  text-align: center;
+  button {
+    padding: 0 $spacing-base;
+  }
+  strong, p {
+    color:$cta-secondary;
+  }  
+}
+
+.changeLocContents {
+  background-color:$cta-primary;
+  color: $white;
+}
+
+// Override way too specific declaration.
+.locationAddress {
+  a {
+    border-color: $white;
+    color: $white;
+  }
+}
+
+#resultLabels {
+  color: $cta-primary;
+  font-size: 13px;
+  .fa {
+    color: $cta-secondary;
+    font-size: 2em;
+    line-height: 18px;
+    margin-left: $spacing-xs;
+    vertical-align: top;
+  }
+}
+
+.results-container {
+  padding: $spacing-xs 0;
+  @include screen-sm-min {
+    padding: $spacing-lg 0;
+  }
+}
+
+.result {
+  background-color: $body-bg-color;  
+  border-color: $gray-light;
+  .col {
+    @include screen-sm-min {
+      &:not(:first-child) {
+        border-left-color: $gray-light;
+      }
+    }    
+  }
+}
+
+.result__more {
+  border-top: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+  @include screen-sm-min {
+    border: 0;
+  }
+}
+
+.result__more-label {
+  color: $cta-secondary;
+  cursor: pointer;
+  text-decoration: underline;
+  .glyphicon:before {
+    margin-left: $spacing-xxs;
+  }
+  &:before {
+    content:"More ";  // Move this to JS
+  }  
+}
+
+.result__more-input {
+  display: none;
+  &:checked + label {
+    i {
+        &:before {
+            content:"\e113";
+        }
+    }
+    &:before {
+      content:"Less ";  // Move this to JS
+    }    
+  }
+}
+
+.result__price {
+
+}
+
+.result__btn-call {
+  font-size: $font-size-sm;
+}
+
+.result__btn-select {
+  @include screen-sm-min {
+    padding-left: $spacing-xxs;
+    padding-right: $spacing-xxs;
+  }   
+}
+
+.result__terms {}
+
+.highlight {}
+
+#nameCol {  //.result__name
+  text-align: center;
+  @include screen-sm-min {
+    text-align: left;
+  }  
+  h3 {
+    font-weight: bold;
+    font-size: $font-size-sm;
+    line-height: $font-size-md;
+    @include screen-sm-min {
+      font-size: 13px;
+      margin-top: $spacing-sm;
+    }
+  }  
+}
+
+#metaCol {  //.result__price
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: $black;
+  font-size: 24px;
+  line-height: 2;
+  vertical-align: text-bottom;
+  padding-top: 0;
+  @media only screen and (max-width: $screen-lg) and (min-width: $screen-sm) {
+    font-size: $font-size-md;
+  }  
+  sup {
+    font-size: 100%;  // IE fix.
+    font-weight: normal;
+    top: 0em;
+  }  
+}
+
+#promoCol { //.result__promo
+  color: $cta-primary;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  p {
+    max-width: 100%;  //  Fixes IE10 flexbox bug. See https://goo.gl/BrIqaM
+  }
+}
+
+// Legacy style code
+#sortResultsListForm {
+  height: 0 !important;
+}
+
+#callInNumber {
+  color: $cta-primary;
+  font-size: $font-size-sm;
+  strong {
+    display: block;
+  }
+}
+
+.result__promo-short {
+  color: $highlight-primary;
+}
+
+/* -------------------------------------------
+//  Search results Containers
+// -------------------------------------------*/
+
+#results {
+  background-color: #f5f9fa;
+}
+
+.result__meta {
+  border-top: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+  &.highlight:before {
+    color: $cta-primary;
+  }
+  &.col-bundles {
+    p:not(:last-child) {
+      border-bottom-color: $gray-light;
+    }    
+  }
+}
+
+.result__provider-logo {
+  border-left-color: #e3e4e4;
+}
+
+
+.disclaimer-link {
+    font-size: $font-size-xs;
+    margin: 5px 0 0 0;
+}
+
+.disclaimer {
+    padding: 10px;
+    
+    .close {
+        font-size: 2em;
+        margin: 0px;
+    }
+
+    .modal-body {
+        background: $white;
+        font-size: $font-size-sm - 1;
+
+    }
+}

@@ -8,9 +8,58 @@ AC = {
 
 (function($){
 	$(document).ready(function(){
-		$('#street1, #aptCondo, #apartment, #cityStateZip, #zip, #lastname, #zipCode, #bestContactNumber').attr('autocomplete','off');
 		
+		$('#street1, #aptCondo, #apartment, #cityStateZip, #zip, #lastname, #zipCode, #bestContactNumber').attr('autocomplete','off');
+
+		// code for hiding the sidebar in Electricity pages
+		if ($("body").hasClass("page-node-12")) {
+		    $('.sidebar .menu-block-1').hide();
+		}
+
 		AC.init();
+
+		$(document).on('click', '#SubmitZip', function(e) {
+	        var zipval = $("#zipcode").val();
+	        
+	        $.getJSON("/sites/all/themes/acbrand/js/zipcodes.json", checkIndex);
+
+	        function checkIndex(results) {
+	            if ($.inArray(zipval, results.ziparray) > -1) {
+	                window.location.assign('https://www.choosetexaspower.org/compare-offers/?Zip='+zipval+'&Submit=Compare&Type=Home');
+	                //window.location.assign('/showcase.html?'+zipval);
+	            } else {
+	                window.location.assign('https://www.chooseenergy.com/shop/residential/electricity/'+zipval+'/');
+	            }
+        	}
+	        
+	    });
+
+	    $("#zipcode").keyup(function(event) {
+		    if (event.keyCode === 13) {
+		        $("#SubmitZip").click();
+		    }
+		});
+	    var url = window.location.href;
+	    if(url.indexOf("/electricity-utilities.html") != -1){
+	    	$(".modal_all").remove();
+	    }else{
+	    	$(".modal_Et").remove();
+	    }
+	    
+	    $(document).on('click', '#modal_submitZip', function(e) {
+	        var zipval = $("#modal_zipcode").val();
+	        
+	        $.getJSON("/sites/all/themes/acbrand/js/zipcodes.json", checkIndex);
+
+	        function checkIndex(results) {
+	            if ($.inArray(zipval, results.ziparray) > -1) {
+	                window.location.assign('https://www.choosetexaspower.org/compare-offers/?Zip='+zipval+'&Submit=Compare&Type=Home');
+	            } else {
+	                window.location.assign('https://www.chooseenergy.com/shop/residential/electricity/'+zipval+'/');
+	            }
+        	}
+	        
+	    });
 	});
 
 	AC = {
@@ -35,18 +84,25 @@ AC = {
 			});
 
 			$('#main-menu a').click(function(e){
+				var isZipCheck = true;
 				var cat = $(this).attr('class');
-				
-				if(cat.indexOf("active-trail") != -1){
-					cat = (cat.split("active-trail")[0]).trim();
-                }
-				
+				//@todo check if has class
 				// check for address variable from ACDC
-				if(_isvalidAdress) {
+				if(typeof (cat)!='undefined' && cat.toLowerCase() == 'electricity' && typeof ($('#zipBlock').val()) != 'undefined' && $('#zipBlock').val() !=null && $('#zipBlock').val().trim() != '' ){
+					e.preventDefault();
+					redirectZip().promise().done(function() {
+					});
+				} 
+				else if(isZipCheck && cat && _isvalidAdress) {
 					AC.getCategoryResults(cat);
 					e.preventDefault();
 				}
 			});
+
+      		// Show disclaimer if the price asterisk is present.
+			if($(".filter-price sup").length){
+      			$(".filters-disclaimer").removeClass('hidden');
+    		}			
 		},
 
 		//PANEL REVEALER
@@ -279,6 +335,27 @@ AC = {
 		},
 	}
 })(jQuery);
+
+
+
+function redirectZip(){
+	var zipVal =$('#zipBlock').val().substring($('#zipBlock').val().length,$('#zipBlock').val().length -10);
+	zipVal=zipVal.split("-")[0];
+	 var deferred = jQuery.Deferred();
+	$.ajax({
+		url: "/sites/all/themes/acbrand/js/zipcodes.json",
+		type: 'GET',
+		async: false,
+		success: function (data) {
+			if ($.inArray(zipVal, data.ziparray) > -1) {
+				deferred.resolve(window.location = 'https://www.choosetexaspower.org/compare-offers/?Zip='+zipVal+'&Submit=Compare&Type=Home');
+			} else {
+				deferred.resolve(window.location = 'https://www.chooseenergy.com/shop/residential/electricity/'+zipVal+'/');
+			}
+		}
+	});
+	return deferred.promise();
+}
 
 function updateFuseNumber(){
 	if(typeof fuse === 'function'){

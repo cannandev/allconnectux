@@ -26,12 +26,12 @@ function branded_products_views_api($module = NULL, $api = NULL) {
 function branded_products_node_info() {
   $items = array(
     'category_page' => array(
-      'name' => t('Category Page'),
+      'name' => t('Landing Page: Category'),
       'base' => 'node_content',
-      'description' => t('Build pages with customizable features. Use for <em>landing pages</em>.'),
+      'description' => t('Features a larger CTA button. Use for <em>landing pages</em> that direct users down the funnel (online checkout). '),
       'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => t('Limit title character count to 52.'),
+      'title_label' => t('Hero Title (h1)'),
+      'help' => '',
     ),
     'error_page' => array(
       'name' => t('Error Page'),
@@ -42,9 +42,9 @@ function branded_products_node_info() {
       'help' => '',
     ),
     'landing_page' => array(
-      'name' => t('Landing Page with Featured Product'),
+      'name' => t('Landing Page: Call-in'),
       'base' => 'node_content',
-      'description' => t('Build pages with a featured product in the hero. Use for <em>landing pages</em>.'),
+      'description' => t('Features a product in the hero and large phone number CTA. Use for <em>landing pages</em> that direct users to call-in.'),
       'has_title' => '1',
       'title_label' => t('Drupal Page Name (used as meta title) '),
       'help' => '',

@@ -13,16 +13,17 @@
 		align-items: center;
 		justify-content: flex-end;
 		border-bottom: 0;
-		height: 335px;
-		padding-bottom: 3em;
+		// min-height: 186px;
+		min-height: 256px;
 		h4 {
 			font-size: $font-size-md + 4;
-			padding-top: $spacing-sm;
+			padding-top: $spacing-sm + 4;
 		}
 		a {
 			color: $black;
-			font-size: 3em;
+			font-size: 42px;
 			font-weight: bold;
+			// padding-top: $spacing-md;
 			text-decoration: none;
 			@include screen-sm-min {
 				cursor: text ;
@@ -31,14 +32,14 @@
 	}
 	.modal-body {
 		border: 1px solid;
-		margin: 0 4em;
+		margin: 0 $spacing-md;
 		padding-top: 0;
 		.col {
 			justify-content: flex-start;
 			min-height: inherit;			
 			@include screen-md-min {
 				justify-content: center;
-				height: 215px;
+				min-height: 245px
 			}
 		}
 	}
@@ -50,7 +51,7 @@
 .call-overlay__label {
 	width: 224px;
 	display: block;
-	margin: -3px auto;
+	margin: -1px auto;
 	padding-bottom: 1em;
 	text-align: center;
 	text-transform: uppercase;
@@ -60,9 +61,8 @@
 	font-size: $font-size-sm;
 	font-weight: bold;
 	list-style-type: none;
-	margin-bottom: $spacing-sm;
+	margin: $spacing-md 0;
 	li {
-		margin-bottom: 3px;
 	}
 }
 
@@ -71,12 +71,13 @@
 	list-style-type: none;
 	li:before {
 		content: '-';
-		margin-right: $spacing-base/2;
+		margin-right: $spacing-base;;
 	}
 }
 
 .call-overlay__promo {
 	font-size: 1.5em;
+	font-weight: bold;
 	align-items: center;
 	padding: $spacing-base $spacing-md;
 	@include screen-md-min {

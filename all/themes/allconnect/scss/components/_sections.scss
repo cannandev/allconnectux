@@ -16,3 +16,176 @@
     border-bottom: 1px solid $gray-light;
   }
 }
+
+.aside {
+	background-color: $white;
+	h3 {
+		border-color: $gray-light;
+	}
+}
+
+.front {
+	.headline-base {
+		text-align: center;
+	}
+	/* .shared-content {
+		.headline-base {
+			display: none;
+		}
+	} */
+	iframe {
+		@include screen-sm {
+			width: 100%;
+		}
+	}
+}
+
+.as-seen-on-logos {
+	li {
+    width: 208px;
+    height: 4em;
+    text-align: center;
+    @include screen-sm {
+    	width: 49%;
+    }
+    @include screen-xs {
+    	width: 100%;
+    }
+	}
+	img {
+		height: auto;
+		width: 120px;
+	}
+}
+
+
+/*===========================================
+=            Partner Logos            		=
+=============================================*/
+
+.partners {
+	background-color: $white;
+	.title {
+		width: 100%;
+		text-align: center;
+		margin: 10px 0px;
+		font-size: 1.5em;
+	}
+
+	a {
+		display: inline-block;		
+		width: 150px;
+		margin: 0px auto 30px auto;
+	}
+
+	img {
+		max-width: 80%;
+    	height: auto;
+	}
+}
+
+.front .partners {	
+	@extends .partners;
+	a {
+		border:1px solid $border-grey;		
+		height: 80px;
+		font-size: $font-size-xs;
+		text-align: center;
+		background-color: $white;
+		
+		@include radius(3px)
+
+		&:hover {
+			border:1px solid $darkest-grey;
+		}
+	}
+
+	.partner-wrapper {
+		padding: 10px 0 0 0;
+	}
+
+	.allProviders {
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: $font-size-base;
+		height: auto;
+		border: none;
+		margin: 20px auto;
+		color: $link-color;
+		text-decoration: $link-decoration;
+		&:hover {
+			border:none;
+			color: $link-color;
+		}
+	}
+}
+
+.not-front .partners {	
+	@extends .partners;
+	a {
+		border:1px solid $border-grey;		
+		height: 130px;
+		font-size: $font-size-xs;
+		text-align: center;
+		background-color: $white;
+		margin-bottom: 10px;
+		padding: 15px 10px;
+		
+		@include radius(3px)
+
+		&:hover {
+			border:1px solid $darkest-grey;
+		}
+	}
+}
+
+.page-title {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: $cta-primary;
+    font-size: $hero-title-size - 4;
+    color: $hl-secondary-color;
+    .section, .hero {
+    	padding: 0px;
+    }
+}
+
+.main-content {
+	padding: 10px;
+	background-color: $white;
+}
+
+
+.container .col {
+	a {
+		text-decoration: $link-decoration;
+	}
+}
+
+
+.site-header  {
+	a {
+		text-decoration: none;
+	}
+}
+
+
+/* START - styles specifically used for tables in GEO PAGES */
+.field-collection-item table, .field-collection-item tbody tr td, .field-collection-item tbody tr th {
+    border: 1px solid #aaa;
+    text-align: left;
+    padding: 3px 3px;
+}
+
+.field-collection-item tbody tr th{
+text-align: center;
+}
+
+.field-collection-item table {
+    margin: 20px 0px;
+}
+
+/* END - styles specifically used for tables in GEO PAGES */
+

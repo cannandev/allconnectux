@@ -4,7 +4,7 @@
 
 .call-overlay {	//rewrite BEM style
 	.modal-content {
-		background-image: linear-gradient(0deg, $cta-primary 43%, $white 43%);
+		background-image: linear-gradient(0deg, $cta-secondary-dark 43%, $white 43%);
 	}
 	.modal-header {
 		background: url(../img/call-in-popup-agent-min.png) center 18% no-repeat;
@@ -12,10 +12,16 @@
 	.modal-body {
 		background-image: none;
 		background-color: $white;
-  	border-color: $cta-primary;
+  		border-color: $cta-secondary-dark;
+  		.col {
+  			border-left: 0;
+  			@include screen-sm {
+  				height: auto;
+  			}
+  		}
 	}
 	.modal-footer {
-		background-color: $cta-primary;
+		background-color: $cta-secondary-dark;
 		color: $white;
 	}
 }
@@ -34,5 +40,5 @@
 }
 
 .call-overlay__promo {
-	color: $cta-primary;
+	color: $cta-secondary-dark;
 }

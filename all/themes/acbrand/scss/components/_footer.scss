@@ -2,48 +2,32 @@
 //  Footer
 // -------------------------------------------*/
 
-.footer-section {
-    padding: $footer-section-padding;
-}
-
-.test-footer {
-    background: black;
-}
-
-.footer-navbar,
-.footer-section {
+.footer__navbar {
+    position: relative;
+    padding: $spacing-xl 0;
     text-align: center;
 }
 
-.footer-navbar {
-    position: relative;
-    padding: $spacing-xl 0;
-}
-
-.footer-logos {
-    .flex-container {
-        justify-content: center;
-    }
-    .flex-item {
-        padding-left: $spacing-base;
-        padding-right: $spacing-base;
-        display: inline-block;
-        @include screen-sm {
-            padding-top: $spacing-base;
-            padding-bottom: $spacing-base;
-            // Add top and bottom padding on small viewports to prevent collision.
-        }
-    }
-    .footer-logo {
-        img {
-            width: $footer-logo-size;
-            height: auto;
-        }
+.footer__logos {
+    padding: $footer-section-padding 0;
+    img {
+      width: auto;
+      margin-left: $spacing-base;
+      &.logo-sm {
+        height: 44px;
+      }
+      &.logo-md {
+        height: 55px;
+      }
+      &.logo-lg {
+        height: 80px;
+      }
     }
 }
 
-.footer-copyright {
+.footer__copyright {
     @include font-size($font-size-sm);
     margin-bottom: 0;
-    padding: $spacing-base 0;
 }
+
+
