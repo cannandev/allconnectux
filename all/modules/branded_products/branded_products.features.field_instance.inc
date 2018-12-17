@@ -90,7 +90,7 @@ function branded_products_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => '<em>(Call to action text. Usually a button or link.)</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -115,7 +115,7 @@ function branded_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -150,7 +150,7 @@ function branded_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -259,7 +259,7 @@ function branded_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -294,7 +294,7 @@ function branded_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -304,7 +304,7 @@ function branded_products_field_default_field_instances() {
     'bundle' => 'field_filters',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '<em>(Used to filter results)</em>',
+    'description' => '<em>Options are FIXED, MONTH, RENEWABLE or <br>ID (e.g. TXU-VIPER:CPX_10089:SFU)</em> ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -329,7 +329,44 @@ function branded_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_filters-field_price'.
+  $field_instances['field_collection_item-field_filters-field_price'] = array(
+    'bundle' => 'field_filters',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_price',
+    'label' => 'Price',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 2,
     ),
   );
 
@@ -365,6 +402,168 @@ function branded_products_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'field_collection_item-field_price-field_price_amount'.
+  $field_instances['field_collection_item-field_price-field_price_amount'] = array(
+    'bundle' => 'field_price',
+    'default_value' => array(
+      0 => array(
+        'value' => '0.0',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
+          'scale' => 1,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_price_amount',
+    'label' => 'Amount',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_price-field_price_disclaimer'.
+  $field_instances['field_collection_item-field_price-field_price_disclaimer'] = array(
+    'bundle' => 'field_price',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_price_disclaimer',
+    'label' => 'Show asterisk',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_price-field_price_unit'.
+  $field_instances['field_collection_item-field_price-field_price_unit'] = array(
+    'bundle' => 'field_price',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_price_unit',
+    'label' => 'Per Unit',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-category_page-field_address_capture'.
+  $field_instances['node-category_page-field_address_capture'] = array(
+    'bundle' => 'category_page',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_address_capture',
+    'label' => 'Disable Address Capture on all CTAs',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-category_page-field_body_content'.
   $field_instances['node-category_page-field_body_content'] = array(
     'bundle' => 'category_page',
@@ -379,7 +578,7 @@ function branded_products_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 3,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -400,18 +599,14 @@ function branded_products_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 11,
+      'weight' => 27,
     ),
   );
 
   // Exported field_instance: 'node-category_page-field_category'.
   $field_instances['node-category_page-field_category'] = array(
     'bundle' => 'category_page',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Bundles',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -420,7 +615,7 @@ function branded_products_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 8,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -441,7 +636,47 @@ function branded_products_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-category_page-field_disclaimer'.
+  $field_instances['node-category_page-field_disclaimer'] = array(
+    'bundle' => 'category_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_disclaimer',
+    'label' => 'Disclaimer',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 28,
     ),
   );
 
@@ -459,7 +694,7 @@ function branded_products_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -470,7 +705,7 @@ function branded_products_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_filters',
-    'label' => 'Filters',
+    'label' => 'Products',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -480,7 +715,7 @@ function branded_products_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -489,10 +724,10 @@ function branded_products_field_default_field_instances() {
     'bundle' => 'category_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This title will only appear when an image is selected.',
+    'description' => 'This title will only appear when a hero image is selected.',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -507,7 +742,7 @@ function branded_products_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_filters_title',
-    'label' => 'Filters Title',
+    'label' => 'Products Header',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -520,7 +755,7 @@ function branded_products_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -529,14 +764,14 @@ function branded_products_field_default_field_instances() {
     'bundle' => 'category_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Thumbnails coming soon...',
+    'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 5,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -547,7 +782,7 @@ function branded_products_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_hero_image',
-    'label' => 'Hero Image',
+    'label' => 'Select Hero Image',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -556,90 +791,8 @@ function branded_products_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-category_page-field_hero_subtitle'.
-  $field_instances['node-category_page-field_hero_subtitle'] = array(
-    'bundle' => 'category_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Max length 57 characters.
-Replaces page subtitle when an <em>image</em> is selected.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_hero_subtitle',
-    'label' => 'Hero Subtitle',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-category_page-field_hero_title'.
-  $field_instances['node-category_page-field_hero_title'] = array(
-    'bundle' => 'category_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Max length 22 characters.
-Replaces page title when an <em>image</em> is selected.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_hero_title',
-    'label' => 'Hero Title',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 9,
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -661,7 +814,7 @@ Replaces page title when an <em>image</em> is selected.',
           'node_reference_view_mode' => 'full',
         ),
         'type' => 'node_reference_node',
-        'weight' => 2,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -683,48 +836,6 @@ Replaces page title when an <em>image</em> is selected.',
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-category_page-field_subtitle'.
-  $field_instances['node-category_page-field_subtitle'] = array(
-    'bundle' => 'category_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '<em>Title</em> maximum character count is 50. 
-<em>Subtitle</em> maximum character count is 72. Count includes spaces.
-',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_subtitle',
-    'label' => 'Subtitle',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
     ),
   );
 
@@ -878,7 +989,7 @@ Replaces page title when an <em>image</em> is selected.',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Results Product Category',
+    'label' => 'Types of Products',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1100,6 +1211,49 @@ Replaces page title when an <em>image</em> is selected.',
     ),
   );
 
+  // Exported field_instance: 'node-landing_page-field_featured_promo_img'.
+  $field_instances['node-landing_page-field_featured_promo_img'] = array(
+    'bundle' => 'landing_page',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Hidden if there is no Promotion Text.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 33,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_featured_promo_img',
+    'label' => 'Display Promotion Image',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-landing_page-field_featured_promo_text'.
   $field_instances['node-landing_page-field_featured_promo_text'] = array(
     'bundle' => 'landing_page',
@@ -1136,7 +1290,7 @@ Replaces page title when an <em>image</em> is selected.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -1215,7 +1369,7 @@ Replaces page title when an <em>image</em> is selected.',
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 17,
+      'weight' => 45,
     ),
   );
 
@@ -1255,7 +1409,7 @@ Replaces page title when an <em>image</em> is selected.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 44,
     ),
   );
 
@@ -1296,7 +1450,7 @@ Replaces page title when an <em>image</em> is selected.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -1340,7 +1494,7 @@ Replaces page title when an <em>image</em> is selected.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -1385,7 +1539,7 @@ Replaces page title when an <em>image</em> is selected.',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -1947,6 +2101,7 @@ Replaces page title when an <em>image</em> is selected.',
   t('(See documentation for <code>class</code> to enable Marchex phone number, address capture button and address capture links.)
 ');
   t('<em>(Below product title)</em>');
+  t('<em>(Call to action text. Usually a button or link.)</em>');
   t('<em>(Choose one of the following: icon_giftcard_ltgray.png, icon_giftcard_white.png, icon_giftcard_red.png, icon_giftcard_blue.png)</em>');
   t('<em>(Leading text. Appears above pricing.)</em>');
   t('<em>(Phone number link must include <code>class="acdc_provider_phone_no"</code> for Marchex)</em>');
@@ -1955,10 +2110,8 @@ Replaces page title when an <em>image</em> is selected.',
   t('<em>(Recommended character limit of 22)</em>');
   t('<em>(Special contract terms. Appears below pricing.)</em>');
   t('<em>(Used for ACDC search results page)</em>');
-  t('<em>(Used to filter results)</em>');
-  t('<em>Title</em> maximum character count is 50. 
-<em>Subtitle</em> maximum character count is 72. Count includes spaces.
-');
+  t('<em>Options are FIXED, MONTH, RENEWABLE or <br>ID (e.g. TXU-VIPER:CPX_10089:SFU)</em> ');
+  t('Amount');
   t('Body');
   t('Body Content');
   t('CSS Files');
@@ -1966,14 +2119,13 @@ Replaces page title when an <em>image</em> is selected.',
   t('Comma separated list ');
   t('Contract/Terms');
   t('Description');
+  t('Disable Address Capture on all CTAs');
+  t('Disclaimer');
+  t('Display Promotion Image');
   t('Error Description');
   t('Filter Parameters');
-  t('Filters');
-  t('Filters Title');
   t('H1 Heading');
-  t('Hero Image');
-  t('Hero Subtitle');
-  t('Hero Title');
+  t('Hidden if there is no Promotion Text.');
   t('Hide CTA');
   t('Hide Footer');
   t('Hide Header');
@@ -1981,14 +2133,11 @@ Replaces page title when an <em>image</em> is selected.',
   t('JS Inline Scripts in <head>');
   t('Link CTA Text');
   t('Make this section available on category pages');
-  t('Max length 22 characters.
-Replaces page title when an <em>image</em> is selected.');
-  t('Max length 57 characters.
-Replaces page subtitle when an <em>image</em> is selected.');
   t('Maximum character count of 42.');
   t('Page Category');
   t('Page Content');
   t('Page Groups');
+  t('Per Unit');
   t('Phone Number CTA');
   t('Plan Terms');
   t('Price');
@@ -2001,13 +2150,12 @@ Replaces page subtitle when an <em>image</em> is selected.');
   t('Products Header');
   t('Promotion Image URL');
   t('Promotion Text');
-  t('Results Product Category');
   t('Select Hero Image');
   t('Shared Content');
-  t('Subtitle');
-  t('This title will only appear when an image is selected.');
-  t('Thumbnails coming soon...');
+  t('Show asterisk');
+  t('This title will only appear when a hero image is selected.');
   t('Title');
+  t('Types of Products');
   t('h2 Title');
 
   return $field_instances;

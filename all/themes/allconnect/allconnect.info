@@ -8,14 +8,14 @@ base theme = acbrand
 
 stylesheets[all][] = css/skin.css
 
-scripts[] = main.js
+scripts[] = js/main.js
+scripts[] = js/allconnect-fuse.js
 
 ; Set block regions
 regions[header_banner] = Header Banner
-regions[content] = Content
+regions[address_capture] = Address Capture
+regions[content] = Node Content
+regions[sidebar_first] = Sidebar
 regions[mid_banner] = Mid Banner
-regions[featured] = Featured
 regions[footer_banner] = Footer Banner
-regions[footer_logos] = Footer Logos
-regions[footer_brand] = Brand Footer
 regions[footer_corporate] = Corporate Footer

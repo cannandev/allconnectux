@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Branded Open Template feature.
+ */
+
+include_once 'branded_open_template.features.inc';

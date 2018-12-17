@@ -68,7 +68,7 @@
               <?php print render($content['field_hero_phone_cta']); ?>
             </div>
             <?php if(render($content['field_hero_link_cta'])): ?>
-            <a class="hero-cta__link btn-view-offers" href="#" data-toggle="modal" data-target="#address-capture" filterdata="category=<?php print $category_choice; ?>"><?php print render($content['field_hero_link_cta']); ?></a>              
+            <a class="hero-cta__link btn-view-offers" href="#" data-toggle="modal" data-target="#address-capture" filterData="category=<?php print $category_choice; ?>"><?php print render($content['field_hero_link_cta']); ?></a>              
             <?php endif; ?>
           </div><!-- /.hero-cta -->
           <?php endif; ?>          

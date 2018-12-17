@@ -156,3 +156,86 @@
     -webkit-opacity: $opacity;
     opacity: $opacity;
 }
+
+@mixin radius($radius) {
+    -moz-border-radius: $radius; 
+    -webkit-border-radius: $radius; 
+    -o-border-radius: $radius; 
+    border-radius: $radius;
+}
+
+// @TODO - Post release of Allconnect, consider cleaning the media query & its variables
+@mixin screen-mobile {
+    @media only screen and (min-width: $screen-mobile-min) and (max-width: $screen-mobile-max) {
+        @content;
+    }
+}
+
+@mixin screen-mobile-landscape {
+    @media only screen and (min-width: $screen-mobile-min) and (max-width: $screen-mobile-max) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin screen-tablet {
+    @media only screen and (min-width: $screen-tablet-min) and (max-width: $screen-tablet-max) {
+        @content;
+    }
+}
+
+@mixin screen-tablet-portrait {
+    @media only screen and (min-width: $screen-tablet-min) and (max-width: $screen-tablet-max) and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin screen-tablet-landscape {
+    @media only screen and (min-width: $screen-tablet-min) and (max-width: $screen-tablet-max) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin screen-desktop {
+    @media only screen and (min-width: $screen-desktop-min) and (max-width: $screen-desktop-max) {
+        @content;
+  }
+}
+
+@mixin gradient-background-with-img($i) {
+    background: -moz-linear-gradient(left, $hero-gradient-rgba 0%, $hero-gradient-rgba 40%, $hero-gradient-rgba-3rdvalue 50%), url(../img/hero/landing_hero#{$i}_2800.jpg), $cta-secondary-dark;
+    background: -webkit-linear-gradient(left, $hero-gradient-rgba 0%, $hero-gradient-rgba 40%, $hero-gradient-rgba-3rdvalue 50%), url(../img/hero/landing_hero#{$i}_2800.jpg), $cta-secondary-dark;
+    background: linear-gradient(to right, $hero-gradient-rgba 0%, $hero-gradient-rgba 40%, $hero-gradient-rgba-3rdvalue 50%), url(../img/hero/landing_hero#{$i}_2800.jpg), $cta-secondary-dark;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4081bd41', endColorstr='#00ffffff',GradientType=1 );
+    background-color: $cta-secondary-dark;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+@mixin gradient-background-no-img() {
+    background: -moz-linear-gradient(left, $hero-gradient-rgba 0%, $hero-gradient-rgba 100%, $hero-gradient-rgba-3rdvalue 50%), $cta-secondary-dark;
+    background: -webkit-linear-gradient(left, $hero-gradient-rgba 0%, $hero-gradient-rgba 100%, $hero-gradient-rgba-3rdvalue 50%), $cta-secondary-dark;
+    background: linear-gradient(to right, $hero-gradient-rgba 0%, $hero-gradient-rgba 100%, $hero-gradient-rgba-3rdvalue 50%), $cta-secondary-dark;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4081bd41', endColorstr='#00ffffff',GradientType=1 );
+}
+
+@mixin hero-background($i) {
+
+    @include gradient-background-with-img($i);
+
+    @include screen-mobile {
+        @include gradient-background-no-img();
+    }
+    
+    @include screen-tablet-portrait {
+        @include gradient-background-no-img();
+    }
+
+    @include screen-tablet-landscape {
+        @include gradient-background-with-img($i);
+    }
+
+    @include screen-desktop {
+        @include gradient-background-with-img($i);
+    }
+}

@@ -107,14 +107,14 @@ $hide_mobile = (isset($content['field_hide_mobile']) && $content['field_hide_mob
     </div>
     <?php if(isset($content['field_hide_cta']) && $content['field_hide_cta']['#items'][0]['value'] == 0): ?>
     <div id="cta-footer" class="text-center">
-      <button class="btn-view-offers btn btn-primary" type="button" data-toggle="modal" data-target="#address-capture" filterdata="category=Bundles">
+      <button class="btn-view-offers btn btn-primary" type="button" data-toggle="modal" data-target="#address-capture" filterData="category=Bundles">
       <span class="btn-icon glyphicon glyphicon-map-marker"></span>Find Offers In Your Area</button>   
     </div>
     <?php endif; ?>
   </section>
 </div>
 <?php else: ?>
-  <section id="node-<?php print $node->nid; ?>" class="section section-hr text-center <?php print render($hide_mobile); ?>"<?php print $attributes; ?>>
+  <section class="shared-content section section-hr text-center <?php print render($hide_mobile); ?>" id="node-<?php print $node->nid; ?>" <?php print $attributes; ?>>
     <div class="container" <?php print $content_attributes; ?>>
       <?php print render($title_prefix); ?>    
       <h2 class="headline-base"><?php print $title; ?></h2>

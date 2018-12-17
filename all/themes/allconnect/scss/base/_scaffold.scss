@@ -1,12 +1,67 @@
-//** Small overrides.
+// Reset to default 16px font size
+html,
+body {
+    font-family: $font-default;
+    background-color: $body-bg-color;
+}
 
+h1 {
+  color: $white;
+  font-weight: 200;
+}
+
+h2 {
+  color: $hl-primary-color;
+  .node-content &, 
+  .article & { 
+    @include font-size(24px);
+  }
+}
+
+h3 {
+  .node-content &, 
+  .article & {  
+    color: $highlight-secondary;
+    @include font-size($font-size-md);
+    font-weight: bold;
+  }
+  margin: $spacing-sm 0;
+}
+
+h4 {
+  font-weight: bold;
+  .node-content &, 
+  .article & {  
+    @include font-size(18px);
+    margin-top: $spacing-base;
+    color: $hl-secondary-color;
+    font-weight: normal;
+  }  
+}
+
+code {
+  font-size: 75%;
+}
 
 // Default link color
 a {
-  color: $nav-link-color;
+  color: $link-color;
   &:hover {
-    color: $nav-link-color;
+    color: $link-color-hover;
   }
+}
+
+.headline-base,
+.sub-heading-base {
+  color: $hl-primary-color;
+  font-weight: normal;
+  margin-bottom: $spacing-sm;
+  margin-left: 10px;
+}
+
+.text-primary,
+.highlight-text {
+  color: $highlight-primary;
 }
 
 // ==========================================================================
@@ -17,15 +72,20 @@ a {
 }
 
 .modal-footer {
-	background-color: darken($gray-light, 10%);
+	background-color: #D1D3D4;
 }
 
 .modal-header {
 	.close {
-    color: $blue;
+    color: $cta-secondary;
     opacity: 1;
     &:hover {
-    	color: darken($blue, 8%);
+    	color: darken($cta-secondary, 8%);
     }
 	}
+}
+
+.node-content {
+  background-color: $node-content-background;
+  padding: 0px;
 }

@@ -1,16 +1,31 @@
 //**Footer Styles
+#cta-footer {
+  padding-bottom: $spacing-xl;
+}
+
 .footer-navbar-light {
-  // border-top: 2px solid $hr-color;
-  background-color: $footer-bg-light;
+  background-color: $white;
   a {
-    color: $link-color;
+    color: $nav-link-color;
   }
 }
 
 .footer-navbar-dark {
-  background-color: $footer-bg-dark;
-  color: $footer-dark-text-color;
+  background-color: $black;
+  color: $white;
   a {
-    color: $footer-dark-link-color;
+    color: $white;
+  }
+}
+
+.footer-navbar {
+  @font-size($font-size-sm);
+}
+
+.social-links-menu {
+  a {
+    &:hover {
+      color: $highlight-secondary;
+    }
   }
 }

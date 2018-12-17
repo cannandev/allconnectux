@@ -227,6 +227,12 @@ label {
                                 margin-left:5px;
                             }    
                         }
+                        .pricingTiers {
+                            justify-content: center;
+                            align-items:flex-start;
+                            font-size:$font-size-xss;
+                            color: $darkest-grey;
+                        }
                         .btn {
                             margin:20px auto 0px;
 
@@ -301,6 +307,7 @@ label {
                                 font-size:11px;
                                 font-weight: bold;
                                 text-transform: uppercase;
+                                color:$darkest-grey;
                                 margin:15px 0px 0px 0px;
                                     
                                 &:first-child {
@@ -487,6 +494,7 @@ label {
                 li {
                     .pagination-icon-right, .pagination-icon-left {
                         padding:0px;
+                        background-color: transparent;
                     }
                     .pagination-icon-left {
                         margin-right:20px;
@@ -562,6 +570,87 @@ label {
     }
 }
 
+.infoMsg {    
+    margin: 0 0 1.5em 0;
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* loading results animation - start */
+
+.container-loading {
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  display: block;  
+  background-color: $white;
+  padding: 25px 10px 20px 10px;
+  margin-bottom: 20px;
+}
+
+.loadingMsg {
+  font-size: 16px;
+  color: #81bd41;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.dots-container {
+  margin: auto;
+  width: 70px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #81bd41;
+    background-color: #81bd41;
+    border-radius: 50%;
+    float: left;
+    margin: 6px 5px 6px 5px;
+    
+    -webkit-animation: fx 1.4s infinite ease-in-out both;
+    animation: fx 1.4s infinite ease-in-out both;
+
+    &:nth-child(2) {
+        -webkit-animation: fx 1000ms ease infinite 1000ms * 0.3;
+        animation:fx 1000ms ease infinite 1000ms * 0.3;;
+    }
+    &:nth-child(3) {
+        -webkit-animation:fx 1000ms ease infinite 1000ms * 0.6;;
+        animation:fx 1000ms ease infinite 1000ms * 0.6;;
+    }
+}
+
+@keyframes fx {
+    50% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fx {
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* loading animation - end */
+
+
 .disclaimer-link {
     font-size: $font-size-xs;
     margin: 5px 0 0 0;
@@ -581,3 +670,4 @@ label {
 
     }
 }
+

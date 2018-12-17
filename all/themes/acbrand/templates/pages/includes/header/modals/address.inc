@@ -1,4 +1,4 @@
-    <div class="modal fade" tabindex="-1" role="dialog" id="address-capture">
+    <div class="modal_all modal fade" tabindex="-1" role="dialog" id="address-capture">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header text-center pd-t-md">
@@ -28,6 +28,32 @@
           </div>
           <div class="modal-footer pd-b-lg">
             <button type="submit" class="data-address-submit btn btn-primary">Continue</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+    <div class="modal_Et modal fade" tabindex="-1" role="dialog" id="address-capture">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-center pd-t-md">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+            <h4 class="modal-title headline-base">Check Available Offers</h4>
+            <p class='lead'>Enter your address below to view pricing and promotions available in your area.</p>
+          </div>
+          <div class="modal-body pd-t-md">
+            <form class="address-capture-form">
+              <div class="row">
+                <div class="form-group col col-md-12 col-xs-12">
+                  <label for="cityStateZip">Zip Code</label>
+                  <input id="modal_zipcode" class="form-control" maxlength="5" onkeypress="return event.charCode >= 48 && event.charCode <= 57" type="text">
+                  <input id="filter-data" type="hidden" value="">
+                </div>             
+              </div>    
+            </form>
+          </div>
+          <div class="modal-footer pd-b-lg">
+            <button type="submit" class="btn btn-primary" id="modal_submitZip">Continue</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->

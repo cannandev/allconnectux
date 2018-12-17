@@ -1,72 +1,104 @@
 // ==========================================================================
-// Variables.
+// Fonts.
 // ==========================================================================
 
-// Primary Colors.
-/* @todo: Replace red and blue with semantic names. brand-primary, brand-secondary */
-$white:                   #FFF;
-$red:             				#C8001D;
-$blue:                    #2B9CD8;
-$black:                   #000;
-$gray-light:              #ebebeb;
-$gray-medium:             #5A5A5C;
-$gray-charcoal:           #242424;
+$font-default: Helvetica, Arial, sans-serif;
 
-$brand-primary:           $red;
+// ==========================================================================
+// Basic colors.
+// ==========================================================================
 
-//### Primary color for call to action elements.
-$cta-primary:               $blue;
+$white:                   #fff;
+$black:                   #222;
+$gray:                    #5A5A5A;
+$gray-light:              darken($white, 8%);
+
+ 
+// DO NOT ADD MORE BASIC COLORS. USE SASS lighten() OR darken() FUNCTIONS
+// IN YOUR CODE. SEE http://sasstoolkit.com
+// OR CREATE A NEW SEMANTIC VARIABLE BELOW.
+
+
+// ==========================================================================
+// Branded color map.
+// ==========================================================================
+
+// Actions.
+$cta-primary:             #00436f;           // 1) Primary CTA Color
+$cta-secondary:           #006e9e;      // 2) Secondary CTA light on dark
+$cta-secondary-dark:      #509ccf;           // 3) Secondary CTA dark on light
+$cta-order-by-phone:      #005174;           // 3) Secondary CTA dark on light
+
+
+// Headlines.
+$hl-primary-color:          $black;       // 4) h1 Heading Color
+$hl-secondary-color:        #627e90;        // 5) Headings (h2-h5), headline color
+
+
+// Navbar Links.
+$nav-link-color:            $black;  // 6) Top Nav Links Color
+
+
+// Highlights.
+$highlight-primary:         #f58025;    // 7) Primary Highlight Color
+$highlight-secondary:       #81bd41;    // 8) Secondary Highlight Color
+
+
+// Link colors.
+$link-color:                #005175;       // default link color within content
+$link-color-hover:          #005175;
+$link-decoration:			underline;
+
+// ==========================================================================
+// Other site colors.
+// ==========================================================================
 
 // Body colors.
 $body-font-color:           $black;
 $body-bg-color:             $white;
 
-// Border colors.
-$border-default:            $gray-medium;
-$border-light:              $gray-light;
-
-// Headline colors.
-$hl-primary-color:          $red;
-$hl-secondary-color:        $gray-medium;
-
-// Link colors.
-$nav-link-color:            $blue;
-$link-color:                $blue;
-
-// Cart
-$cart-badge-font-color:     $red;
-
-// Horizontal Rule.
-$hr-color:                  $gray-light;
+// Hero gradient.
+$hero-gradient: 			transparent;
+$hero-gradient-rgba:		rgba(129,189,65,0.25);
+$hero-gradient-rgba-3rdvalue:	rgba(255,255,255,0);
+$hero-title-size:			24px;
 
 
-// Footer colors.
-$footer-bg-light:           $white;
-
-$footer-bg-dark:            $gray-charcoal;
-$footer-dark-text-color:    $white;
-$footer-dark-link-color:    $footer-dark-text-color;
-
-// Filters.
-$filter-body-font-color:    $gray-medium;
-$filter-bg-color:           $white;
-
-// Toggle color.
-$navbar-toggle-color:       $red;
-
-// Navbar Links.
-$navbar-link-bg-hover:      $blue;
+// Mobile nav.
+$navbar-link-bg-hover:      $nav-link-color;
 $navbar-link-border-color:  $gray-light;
 $navbar-link-hover:         $white;
+$navbar-toggle-color:       $nav-link-color;  // mobile toggle
 
-// Filters.
-$filter-price-color:        $red;
+
+// Cart.
+$cart-badge-font-color:     $highlight-secondary;
+
 
 // Buttons.
-$btn-border-radius: 1.875em; //30px.
-$btn-primary-bg:            $blue;
-$btn-primary-bg-hover:      darken($blue, 8%);
+$btn-border-radius:         3px;
+$btn-primary-bg:            #509ccf;
 
 
+// Filters.
+$filter-body-font-color:    $black;
+$filter-bg-color:           $white;
+$filter-price-color:        $black;
+$filter-border-color: 			$gray-light;
 
+
+// Border colors.
+$border-medium:            lighten($gray, 40%);
+$border-light:             darken($white, 8%);
+$border-default:           rgba($white, .5);
+
+// Search.
+
+// Callback Checkout.
+$checkout-label-color:     lighten($gray, 28%);
+
+// ==========================================================================
+// Math.
+// ==========================================================================
+$num-results-heros: 9;
 

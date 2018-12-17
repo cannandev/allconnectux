@@ -7,7 +7,7 @@
       </div>
       <!-- / .agent -->
       <h3 class="header-cta-banner__phone">
-      <a href="tel:+<?php print $site_phone; ?>" data-fuse data-fuse-format="1-###-###-####" class="acdc_provider_phone_no"><?php print $site_phone; ?></a>
+      <a href="tel:+<?php print $site_phone; ?>" data-fuse="" data-fuse-format="1-###-###-####" class="acdc_provider_phone_no jsCTAPhoneNumber"><?php print $site_phone; ?></a>
       </h3>
     </div>
     <!-- / .agent-telgroup -->

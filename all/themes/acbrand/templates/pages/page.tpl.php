@@ -64,20 +64,17 @@
  * @ingroup themeable
  */
 $params = drupal_get_query_parameters();
-$is_acdc = isset($params['isACDC']) ? TRUE : FALSE;
 //@todo move to template.php
+dsm(path_to_theme(), 'path_to_theme');
 ?>
 
 <!-- Header content -->
   <div id="header-wrapper">
-    <?php if (!$is_acdc): ?>
-    <?php print render($page['header_codes']); ?>
-    <?php include_once path_to_theme() . '/templates/pages/includes/header/modals/address.inc'; ?>
+    <?php include_once drupal_get_path('theme', 'acbrand') . '/templates/pages/includes/header/modals/address.inc'; ?>
     <header class="site-header">
       <?php include_once path_to_theme() . '/templates/pages/includes/header/banners/cta-banner.inc'; ?>
-      <?php include_once path_to_theme() . '/templates/pages/includes/header/menus/main-menu.inc'; ?>
+      <?php include_once drupal_get_path('theme', 'acbrand') . '/templates/pages/includes/header/menus/main-menu.inc'; ?>
     </header>
-    <?php endif; ?>
   </div>
     <?php if ($is_admin): ?>
       <?php print $messages; ?>
@@ -86,32 +83,16 @@ $is_acdc = isset($params['isACDC']) ? TRUE : FALSE;
       <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
     <?php endif; ?> 
     
-<!-- Main content -->
       
-      <?php print render($page['content']); ?>
-
-      <?php if($page['featured']): ?>
-      <div class="section-hr pd-y-xl">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <?php print render($page['featured']); ?>
-            </div>
-          </div>
-          <!-- /.row -->
-        </div>
-      </div>
-      <?php endif; ?>  
+    <?php print render($page['content']); ?>
     
 
 <!-- Footer content -->
-  <?php if (!$is_acdc): ?>
-  <footer id="footer-wrapper" class="site-footer">
-    <?php include_once path_to_theme() . '/templates/pages/includes/footer/menus/brand-menu.inc'; ?>
-    <?php include_once path_to_theme() . '/templates/pages/includes/footer/banners/cta-banner.inc'; ?>
-    <?php include_once path_to_theme() . '/templates/pages/includes/footer/menus/logos.inc'; ?>
-    <?php include_once path_to_theme() . '/templates/pages/includes/footer/menus/corporate-menu.inc'; ?>
+  <footer id="footer-wrapper" class="footer">
+    <?php include_once drupal_get_path('theme', 'acbrand') . '/templates/pages/includes/footer/banners/cta-banner.inc'; ?>
+    <?php include_once drupal_get_path('theme', 'acbrand') . '/templates/pages/includes/footer/menus/corporate-menu.inc'; ?>
+    <script src="https://use.fontawesome.com/b25e7d562a.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </footer>  
-  <?php endif; ?>
 
   

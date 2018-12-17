@@ -3,6 +3,7 @@
 // -------------------------------------------*/
 
 .flex-nav {
+    @include font-size(14px);
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -44,44 +45,25 @@
         // flex: 1;
         // justify-content: center;
         justify-content: flex-start;
-        li {
-            &:after {
-                @include font-size($font-size-md);
-                font-weight: 100;
-                content: '|';
-                // Add pipes at the end of each link in navbar.
-            }
-            // Remove pipe on the last li tag.
-            &:last-child {
-                &:after {
-                    content: '';
-                }
-            }
-        }
-    }
-    @include screen-md {
-        text-align: center;
-        li {
-            &:after {
-                content: ''
-            }
-        }
     }
 }
 
 .order-status-nav {
-    @include screen-md-min {
-        display: flex;
-        margin-left: auto;
-    }
     display: block;
     a {
         display: inherit;
+        &:hover {
+            text-decoration: none;
+        }
     }
+    @include screen-md-min {
+        display: flex;
+        margin-left: auto;
+    }    
 }
 
 // Footer navs.
-.footer-nav {
+.footer__nav {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,9 +78,9 @@
         a {
             @include font-size($font-size-sm);
             padding: $spacing-xs $spacing-base;
-            text-decoration: underline;
+            text-decoration: none;
             &:hover {
-                text-decoration: none;
+                text-decoration: underline;
             }
         }
     }

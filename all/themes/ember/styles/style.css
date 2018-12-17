@@ -4597,11 +4597,11 @@ a.active {
 }
 
 /* Content type specific styles */
-#category-page-node-form .wysiwyg-toggle-wrapper ~ div,
-#landing-page-node-form .wysiwyg-toggle-wrapper ~ div, 
-#results-page-node-form .wysiwyg-toggle-wrapper ~ div {
-  display: none;
-}
+// #category-page-node-form .wysiwyg-toggle-wrapper ~ div,
+// #landing-page-node-form .wysiwyg-toggle-wrapper ~ div, 
+// #results-page-node-form .wysiwyg-toggle-wrapper ~ div {
+//   display: none;
+// }
 
 /* Radios */
 

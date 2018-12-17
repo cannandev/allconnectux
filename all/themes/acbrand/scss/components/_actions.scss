@@ -93,6 +93,8 @@ a {
 // CTA Phone numbers
 // ==========================================================================
 .acdc_provider_phone_no {
+    color: $black;
+    font-weight: bold;
     @include screen-sm-min {
         cursor: text;
     }

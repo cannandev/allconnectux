@@ -18,10 +18,10 @@
 
   $theme_path = drupal_get_path('theme', $GLOBALS['theme']);
 
-  $price = explode('.', $content['field_filter_price']['#items'][0]['safe_value']);
+  $price = NULL;
 
-  if(empty($price[1])) {
-    $price[1] = '00';
+  if (!empty($content['field_filter_price'])) {
+  $price = explode('.', $content['field_filter_price']['#items'][0]['safe_value']);
   }
 
   if (!empty($content['field_show_filter_icons']['#items'])) {
@@ -31,7 +31,7 @@
   $filter_value = isset($content['field_filter_value']) ? trim(render($content['field_filter_value'])) : '';
 
 ?>
-              <div class="col-xs-12 col-sm-4">
+              <div class="col-xs-12 col-sm-4 pd-t-lg pd-b-lg">
                 <article class="filter">
                   <header class="filter-header">
                     <div class="filter-icons">
@@ -40,17 +40,17 @@
                         <?php foreach($options as $value): ?>
                           <?php if($value == 0): ?>
                             <i class="filter-icon">
-                              <img src="<?php print $theme_path; ?>/img/icon_int.svg" alt="" class="filter-icon-img">
+                              <img src="/<?php print $theme_path; ?>/img/icon_int.svg" alt="" class="filter-icon-img">
                             </i>
                           <?php endif; ?>
                           <?php if($value == 1): ?>
                             <i class="filter-icon">
-                              <img src="<?php print $theme_path; ?>/img/icon_tv.svg" alt="" class="filter-icon-img">
+                              <img src="/<?php print $theme_path; ?>/img/icon_tv.svg" alt="" class="filter-icon-img">
                             </i>
                           <?php endif; ?>
                           <?php if($value == 2): ?>
                             <i class="filter-icon">
-                              <img src="<?php print $theme_path; ?>/img/icon_voice.svg" alt="" class="filter-icon-img">
+                              <img src="/<?php print $theme_path; ?>/img/icon_voice.svg" alt="" class="filter-icon-img">
                             </i>
                           <?php endif; ?>
                         <?php endforeach; ?>
@@ -62,6 +62,7 @@
                       <p class="filter-desc"><?php print render($content['field_filter_description']); ?></p>
                       <?php endif; ?>                    
                   </header>
+                  <?php if ($price != NULL) : ?>
                   <div class="filter-content">
                     <div class="filter-text">
                       <?php if(!empty($content['field_filter_label'])): ?>
@@ -84,6 +85,7 @@
                     </div>
                     <!-- /.filter-text -->
                   </div>
+                  <? endif; ?>
                   <p class="filter-terms">
                   <?php if(!empty($content['field_filter_terms'])): ?>
                     <?php print render($content['field_filter_terms']); ?>
@@ -91,7 +93,7 @@
                   </p><!-- /.filter-terms -->
                   <?php if(!empty($content['field_filter_cta'])): ?>             
                   <footer class="filter-footer">
-                    <button class="btn-view-offers btn btn-primary" type="button" data-toggle="modal" data-target="#address-capture" filterData="category=<?php print $filter_value; ?>"><?php print render($content['field_filter_cta']); ?></button>
+                    <button class="btn-view-offers btn btn-primary" type="button" data-toggle="modal" data-target="#address-capture" filterData="<?php print $filter_value; ?>"><?php print render($content['field_filter_cta']); ?></button>
                   </footer>
                   <?php endif; ?>
                 </article>
